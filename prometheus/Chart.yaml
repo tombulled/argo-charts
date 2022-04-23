@@ -1,0 +1,9 @@
+apiVersion: v2
+name: prometheus
+description: A chart for prometheus
+type: application
+version: 0.1.0
+appVersion: 2.34.0
+dependencies:
+- name: prometheus
+  version: 15.8.5
