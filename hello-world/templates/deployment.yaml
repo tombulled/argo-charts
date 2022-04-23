@@ -1,26 +1,29 @@
+{{- $chart_name := .Chart.Name }}
+{{- $chart_version := .Chart.Version }}
+{{- $release_name := .Release.Name }}
+{{- $release_name := .Release.Service }}
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{- printf "%s-%s" .Release.Name .Chart.Name }}-deployment
   labels:
     app: {{- printf "%s-%s" .Release.Name .Chart.Name }}
-    chart: {{- printf "%s-%s" .Chart.Name .Chart.Version }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    chart: {{- printf "%s-%s" .Chart.Name .Chart.Version | quote }}
+    release: {{ $release_name }}
+    heritage: {{ $release_service }}
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: {{- printf "%s-%s" .Release.Name .Chart.Name }}
-  strategy: {}
   template:
     metadata:
       labels:
         app: {{- printf "%s-%s" .Release.Name .Chart.Name }}
     spec:
       containers:
-      - image: {{- printf "%s:%s" .Values.image.repository .Values.image.tag }}
+      - image: {{- printf "%s:%s" .Values.image.repository .Values.image.tag | quote }}
         name: hello-world
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-        resources: {}
