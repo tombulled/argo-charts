@@ -1,0 +1,17 @@
+grafana:
+  replicaCount: 1
+
+  image:
+    tag: 8.3.4-debian-10-r0
+  
+  admin:
+    password: admin
+
+  persistence:
+    enabled: false
+
+  service:
+    type: NodePort
+
+  metrics:
+    enabled: false
