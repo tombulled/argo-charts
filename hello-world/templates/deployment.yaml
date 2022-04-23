@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{- printf "%s-%s" .Release.Name .Chart.Name }}-deployment
+  labels:
+    app: {{- printf "%s-%s" .Release.Name .Chart.Name }}
+    chart: {{- printf "%s-%s" .Chart.Name .Chart.Version }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{- printf "%s-%s" .Release.Name .Chart.Name }}
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: {{- printf "%s-%s" .Release.Name .Chart.Name }}
+    spec:
+      containers:
+      - image: {{- printf "%s:%s" .Values.image.repository .Values.image.tag }}
+        name: hello-world
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        resources: {}
