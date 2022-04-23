@@ -9,3 +9,11 @@ prometheus:
     global:
       scrape_interval: 30s
       scrape_timeout: 5s
+  serverFiles:
+    prometheus.yml:
+      scrape_configs:
+      - job_name: skyrouter
+        metrics_path: /
+        static_configs:
+        - targets:
+          - skyrouter-exporter:8080
