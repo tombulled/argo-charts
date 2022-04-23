@@ -16,6 +16,6 @@ spec:
         app: {{ .Release.Name }}
     spec:
       containers:
-      - name: hello-world
+      - name: {{ .Release.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}

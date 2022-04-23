@@ -19,3 +19,10 @@ spec:
       - name: {{ .Release.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: HOST
+          value: {{ .Values.config.host }}
+        - name: USERNAME
+          value: {{ .Values.config.username }}
+        - name: PASSWORD
+          value: {{ .Values.config.password }}

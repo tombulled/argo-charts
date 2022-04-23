@@ -1,0 +1,15 @@
+replicaCount: 1
+
+image:
+  repository: tombulled/skyrouter-exporter
+  tag: v0.1.0
+  pullPolicy: IfNotPresent
+
+config:
+  host: 192.168.0.1
+  username: admin
+  password: admin
+
+service:
+  type: NodePort
+  port: 8080
