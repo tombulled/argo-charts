@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: tombulled/cyber-chef
+  tag: 9.37.3
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8080

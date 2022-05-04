@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cyber-chef
+description: Helm chart for GCHQ's CyberChef
+type: application
+version: 0.1.0
+appVersion: 9.37.3
