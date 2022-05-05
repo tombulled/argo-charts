@@ -6,3 +6,9 @@ controller:
 
   metrics:
     enabled: true
+
+  service:
+    type: NodePort
+    nodePorts:
+      http: 80
+      https: 443
