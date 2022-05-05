@@ -1,0 +1,6 @@
+apiVersion: v2
+name: gitmoji
+description: Helm chart for Gitmoji
+type: application
+version: 0.1.0
+appVersion: 3.9.0

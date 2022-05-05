@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: tombulled/carbon
-  tag: 4.9.5
+  repository: tombulled/gitmoji
+  tag: 3.9.0
   pullPolicy: IfNotPresent
 
 service:
