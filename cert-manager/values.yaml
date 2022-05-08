@@ -17,7 +17,7 @@ cert-manager:
       pullPolicy: IfNotPresent
 
   cainjector:
-    enabled: true
+    enabled: false
 
     replicaCount: 1
 
@@ -27,7 +27,7 @@ cert-manager:
       pullPolicy: IfNotPresent
 
   startupapicheck:
-    enabled: true
+    enabled: false
 
     image:
       repository: quay.io/jetstack/cert-manager-ctl
