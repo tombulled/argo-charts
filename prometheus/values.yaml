@@ -9,6 +9,15 @@ prometheus:
     global:
       scrape_interval: 30s
       scrape_timeout: 5s
+    ingress:
+      enabled: true
+      pathType: Prefix
+      path: /prometheus/(.*)
+      # hosts:
+      #   - k3s-server
+      # ingressClassName: ingress-nginx
+      annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /$1
   serverFiles:
     prometheus.yml:
       scrape_configs:
@@ -17,11 +26,3 @@ prometheus:
         static_configs:
         - targets:
           - skyrouter-exporter:80
-  ingress:
-    enabled: true
-    pathType: Prefix
-    path: /prometheus/(.*)
-    hostname: k3s-server
-    ingressClassName: ingress-nginx
-    annotations:
-      nginx.ingress.kubernetes.io/rewrite-target: /$1
