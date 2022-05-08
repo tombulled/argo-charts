@@ -15,4 +15,4 @@ spec:
           service:
             name: {{ .Release.Name }}
             port:
-              number: {{ .Values.service.port }}
+              name: http
