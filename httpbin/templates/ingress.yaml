@@ -9,10 +9,12 @@ spec:
   rules:
   - http:
       paths:
-      - path: /httpbin
+      # - path: /httpbin
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: httpbin
             port:
               number: 80
+    host: httpbin.k3s-server.home
