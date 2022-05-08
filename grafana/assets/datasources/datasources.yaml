@@ -4,3 +4,6 @@ datasources:
     type: prometheus
     access: proxy
     url: http://prometheus-server:8080
+    isDefault: true
+    editable: true
+    uid: 4NtEf2Q7k
