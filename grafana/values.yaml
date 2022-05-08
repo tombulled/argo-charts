@@ -17,8 +17,15 @@ grafana:
     useGrafanaIniFile: true
     grafanaIniConfigMap: grafana-config
 
+  dashboardsProvider:
+    enabled: true
+  
+  datasources:
+    secretName: grafana-datasources
+
   dashboardsConfigMaps:
-    - grafana-dashboard-skyrouter
+    - configMapName: grafana-dashboard-skyrouter
+      fileName: dashboard-skyrouter.json
 
   ingress:
     enabled: true

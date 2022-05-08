@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-dashboard-skyrouter
 data:
-  dashboard.json: |-
+  dashboard-skyrouter.json: |-
 {{ .Files.Get "assets/dashboards/skyrouter.json" | indent 4 }}
