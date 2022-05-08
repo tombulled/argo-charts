@@ -16,8 +16,8 @@ grafana:
   ingress:
     enabled: true
     pathType: Prefix
-    path: /grafana/(.*)
+    # path: /grafana/(.*)
     # ingressClassName: ingress-nginx
     # hostname: ""
-    annotations:
-      nginx.ingress.kubernetes.io/rewrite-target: /$1
+    # annotations:
+    #   nginx.ingress.kubernetes.io/rewrite-target: /$1
