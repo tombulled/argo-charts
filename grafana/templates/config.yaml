@@ -4,4 +4,4 @@ metadata:
   name: {{ .Release.Name }}-config
 data:
   grafana.ini: |-
-    {{ .Files.Get "assets/config/grafana.ini" | b64enc }}
+{{ .Files.Get "assets/config/grafana.ini" | indent 4 }}
