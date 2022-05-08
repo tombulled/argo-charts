@@ -4,8 +4,8 @@ prometheus:
     image:
       tag: v2.34.0
     service:
-      type: NodePort
-      servicePort: 8080
+      type: ClusterIP
+      servicePort: 80
     global:
       scrape_interval: 30s
       scrape_timeout: 5s
@@ -16,4 +16,4 @@ prometheus:
         metrics_path: /
         static_configs:
         - targets:
-          - skyrouter-exporter:8080
+          - skyrouter-exporter:80

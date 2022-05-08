@@ -3,7 +3,7 @@ datasources:
   - name: Prometheus
     type: prometheus
     access: proxy
-    url: http://prometheus-server:8080
+    url: http://prometheus-server/
     isDefault: true
     editable: true
     uid: 4NtEf2Q7k

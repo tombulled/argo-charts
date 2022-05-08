@@ -3,6 +3,11 @@ grafana:
 
   image:
     tag: 8.3.4-debian-10-r0
+
+  service:
+    type: ClusterIP
+    ports:
+      grafana: 80
   
   admin:
     password: password
