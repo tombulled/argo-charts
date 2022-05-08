@@ -9,7 +9,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /{{ .Release.Name }}/(.+)
+      - path: /{{ .Release.Name }}/(.*)
         pathType: Prefix
         backend:
           service:
