@@ -1,6 +1,6 @@
 prometheus:
   server:
-    replicaCount: 1
+    replicaCount: 0
     image:
       tag: v2.34.0
     service:
@@ -17,6 +17,7 @@ prometheus:
         - k3s-server
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$1
+    prefixURL: /prometheus/
     extraFlags:
       - web.external-url=/prometheus/
   serverFiles:
