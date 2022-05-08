@@ -17,11 +17,9 @@ prometheus:
         - k3s-server
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$1
-    # prefixURL: /prometheus/
     extraFlags:
       - web.route-prefix=/
       - web.external-url=/prometheus/
-      # - web.external-url=https://k3s-server/prometheus/
   serverFiles:
     prometheus.yml:
       scrape_configs:
