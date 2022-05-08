@@ -15,9 +15,10 @@ prometheus:
       path: /prometheus/(.*)
       hosts:
         - k3s-server
-      # ingressClassName: ingress-nginx
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$1
+    extraFlags:
+      - web.external-url=/prometheus/
   serverFiles:
     prometheus.yml:
       scrape_configs:
