@@ -17,3 +17,11 @@ prometheus:
         static_configs:
         - targets:
           - skyrouter-exporter:80
+  ingress:
+    enabled: true
+    pathType: Prefix
+    path: /prometheus/(.*)
+    hostname: k3s-server
+    ingressClassName: ingress-nginx
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /$1
