@@ -16,7 +16,7 @@ grafana:
   ingress:
     enabled: true
     pathType: Prefix
-    # path: /grafana/(.*)
+    path: /grafana/
     # ingressClassName: ingress-nginx
     # hostname: ""
     # annotations:
