@@ -5,13 +5,18 @@ grafana:
     tag: 8.3.4-debian-10-r0
   
   admin:
-    password: admin
+    password: password
 
   persistence:
     enabled: false
 
-  service:
-    type: NodePort
-
   metrics:
     enabled: false
+
+  ingress:
+    enabled: true
+    pathType: Prefix
+    path: /grafana/(.*)
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /$1
+    # ingressClassName: ingress-nginx
