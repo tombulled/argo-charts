@@ -17,6 +17,9 @@ grafana:
     useGrafanaIniFile: true
     grafanaIniConfigMap: grafana-config
 
+  dashboardsConfigMaps:
+    - grafana-dashboard-skyrouter
+
   ingress:
     enabled: true
     pathType: Prefix
