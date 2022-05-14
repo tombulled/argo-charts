@@ -52,13 +52,17 @@ argo-cd:
     metrics:
       enabled: true
 
-  # configs:
-  #   clusterCredentials:
-  #     - name: k3s
-  #       server: https://k3s.lan/
-  #       config:
-  #         tlsClientConfig:
-  #           insecure: true
+  configs:
+    # clusterCredentials:
+    #   - name: k3s
+    #     server: https://k3s.lan/
+    #     config:
+    #       tlsClientConfig:
+    #         insecure: true
+
+    secret:
+      argocdServerAdminPassword: $2a$10$RfZBdyaoNqCqOidEUCCY6OwNIZfOaytsGzdr9Ie6NPMRhDuwSWH8y
+      argocdServerAdminPasswordMtime: "2022-05-14T22:11:47Z"
 
   applicationSet:
     replicaCount: 1
