@@ -14,7 +14,7 @@ prometheus:
       pathType: Prefix
       path: /(.*)
       hosts:
-        - prometheus.k3s.local
+        - prometheus.k3s.lan
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$1
   serverFiles:

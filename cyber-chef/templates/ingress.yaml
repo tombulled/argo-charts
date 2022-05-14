@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: ingress-nginx
   rules:
-  - host: cyber-chef.k3s.local
+  - host: cyber-chef.k3s.lan
     http:
       paths:
       - path: /(.*)
