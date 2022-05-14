@@ -12,14 +12,11 @@ prometheus:
     ingress:
       enabled: true
       pathType: Prefix
-      path: /prometheus/(.*)
+      path: /(.*)
       hosts:
-        - k3s-server
+        - prometheus.k3s.local
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$1
-    extraFlags:
-      - web.route-prefix=/
-      - web.external-url=/prometheus/
   serverFiles:
     prometheus.yml:
       scrape_configs:
