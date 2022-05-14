@@ -1,0 +1,75 @@
+argo-cd:
+  replicas: 1
+
+  image:
+    repository: quay.io/argoproj/argocd
+    tag: v2.3.3
+    imagePullPolicy: IfNotPresent
+
+  controller:
+    metrics:
+      enabled: true
+
+  dex:
+    enabled: true
+
+    image:
+      repository: ghcr.io/dexidp/dex
+      tag: v2.30.2
+      imagePullPolicy: IfNotPresent
+
+  redis:
+    enabled: true
+
+    image:
+      repository: redis
+      tag: 6.2.6-alpine
+      imagePullPolicy: IfNotPresent
+
+  server:
+    replicas: 1
+
+    service:
+      type: NodePort
+
+    metrics:
+      enabled: true
+
+    ingress:
+      enabled: true
+      ingressClassName: ingress-nginx
+      hosts:
+        - argo-cd.k3s.lan
+      paths:
+        - /(.*)
+      annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /$1
+      https: true
+
+  repoServer:
+    replicas: 1
+
+    metrics:
+      enabled: true
+
+  # configs:
+  #   clusterCredentials:
+  #     - name: k3s
+  #       server: https://k3s.lan/
+  #       config:
+  #         tlsClientConfig:
+  #           insecure: true
+
+  applicationSet:
+    replicaCount: 1
+
+    image:
+      repository: quay.io/argoproj/argocd-applicationset
+      tag: v0.4.1
+      imagePullPolicy: IfNotPresent
+
+    metrics:
+      enabled: false
+
+  notifications:
+    enabled: false
