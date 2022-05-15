@@ -38,7 +38,7 @@ argo-cd:
     replicas: 1
 
     service:
-      type: NodePort
+      type: ClusterIP
 
     metrics:
       enabled: true
@@ -53,6 +53,9 @@ argo-cd:
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$1
       https: true
+
+    extraArgs:
+      - --insecure
 
   repoServer:
     replicas: 1
