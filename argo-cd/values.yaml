@@ -10,6 +10,19 @@ argo-cd:
     metrics:
       enabled: true
 
+    clusterRoleRules:
+      rules:
+        - apiGroups:
+          - '*'
+          resources:
+          - '*'
+          verbs:
+          - '*'
+        - nonResourceURLs:
+          - '*'
+          verbs:
+          - '*'
+
   dex:
     enabled: false
 
