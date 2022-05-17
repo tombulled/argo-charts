@@ -10,7 +10,7 @@ image:
 service:
   type: NodePort
   port: 30389
-  targetPort: 1389
+  targetPort: 389
 
 # customLdifFiles:
 #   0-initial-ous.ldif: |-
