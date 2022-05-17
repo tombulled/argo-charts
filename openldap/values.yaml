@@ -1,11 +1,20 @@
 replicaCount: 1
 
 image:
-  repository: osixia/openldap
-  tag: 1.5.0
+  repository: docker.io/bitnami/openldap
+  tag: 2.6.2
   pullPolicy: IfNotPresent
 
 service:
   type: NodePort
   port: 30389
-  targetPort: 389
+  targetPort: 1389
+
+# customLdifFiles:
+#   0-initial-ous.ldif: |-
+#     dn: ou=People,dc=ssotest,dc=staging,dc=talkingquickly,dc=co,dc=uk
+#     objectClass: organizationalUnit
+#     ou: People
+#     dn: ou=Group,dc=ssotest,dc=staging,dc=talkingquickly,dc=co,dc=uk
+#     objectClass: organizationalUnit
+#     ou: Group
