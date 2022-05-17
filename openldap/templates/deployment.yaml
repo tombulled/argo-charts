@@ -23,10 +23,8 @@ spec:
             - containerPort: {{ .Values.service.targetPort }}
               name: ldap
           env:
-            - name: LDAP_PORT_NUMBER
-              value: "1389"
-            - name: LDAP_ROOT
-              value: "dc=example,dc=org"
+            - name: LDAP_DOMAIN
+              value: "k3s.lan"
             - name: LDAP_ADMIN_USERNAME
               value: "admin"
             - name: LDAP_ADMIN_PASSWORD
@@ -37,25 +35,25 @@ spec:
               value: "config"
             - name: LDAP_CONFIG_ADMIN_PASSWORD
               value: "config"
-            - name: LDAP_USERS
-              value: "user1,user2"
-            - name: LDAP_PASSWORDS
-              value: "pwd1,pwd2"
-            - name: LDAP_USER_DC
-              value: "users"
-            - name: LDAP_GROUP
-              value: "readers"
-            - name: LDAP_ADD_SCHEMAS
-              value: "no"
+            # - name: LDAP_USERS
+            #   value: "user1,user2"
+            # - name: LDAP_PASSWORDS
+            #   value: "pwd1,pwd2"
+            # - name: LDAP_USER_DC
+            #   value: "users"
+            # - name: LDAP_GROUP
+            #   value: "readers"
+            # - name: LDAP_ADD_SCHEMAS
+            #   value: "no"
             # - name: LDAP_EXTRA_SCHEMAS
             #   value: "foo,bar"
-            - name: LDAP_SKIP_DEFAULT_TREE
-              value: "no"
+            # - name: LDAP_SKIP_DEFAULT_TREE
+            #   value: "no"
             # - name: LDAP_CUSTOM_LDIF_DIR
             # - name: LDAP_CUSTOM_SCHEMA_FILE
             # - name: LDAP_ULIMIT_NOFILES
             - name: LDAP_ALLOW_ANON_BINDING
               value: "yes"
-            - name: LDAP_LOGLEVEL
+            - name: LDAP_LOG_LEVEL
               value: "-1"
             
