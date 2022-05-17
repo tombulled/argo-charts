@@ -1,0 +1,9 @@
+apiVersion: v2
+name: authelia
+description: A chart for authelia
+type: application
+version: 0.1.0
+appVersion: 4.35.5
+dependencies:
+- name: authelia
+  version: 0.8.30

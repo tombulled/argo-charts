@@ -1,0 +1,21 @@
+authelia:
+  image:
+    registry: ghcr.io
+    repository: authelia/authelia
+    tag: "4.35.5"
+
+  domain: k3s.lan
+
+  ingress:
+    enabled: true
+
+    subdomain: authelia
+
+    tls:
+      enabled: false
+
+  pod:
+    replicas: 1
+
+  configMap:
+    theme: dark
