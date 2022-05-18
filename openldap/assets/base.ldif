@@ -1,0 +1,7 @@
+dn: ou=People,dc=test,dc=k3s,dc=lan
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Group,dc=test,dc=k3s,dc=lan
+objectClass: organizationalUnit
+ou: Group

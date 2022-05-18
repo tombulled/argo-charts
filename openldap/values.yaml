@@ -12,11 +12,12 @@ service:
   port: 30389
   targetPort: 389
 
-# customLdifFiles:
-#   0-initial-ous.ldif: |-
-#     dn: ou=People,dc=ssotest,dc=staging,dc=talkingquickly,dc=co,dc=uk
-#     objectClass: organizationalUnit
-#     ou: People
-#     dn: ou=Group,dc=ssotest,dc=staging,dc=talkingquickly,dc=co,dc=uk
-#     objectClass: organizationalUnit
-#     ou: Group
+customLdifFiles:
+  0-initial-ous.ldif: |-
+    dn: ou=People,dc=test,dc=k3s,dc=lan
+    objectClass: organizationalUnit
+    ou: People
+    
+    dn: ou=Group,dc=test,dc=k3s,dc=lan
+    objectClass: organizationalUnit
+    ou: Group

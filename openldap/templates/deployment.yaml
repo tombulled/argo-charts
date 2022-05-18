@@ -23,18 +23,30 @@ spec:
             - containerPort: {{ .Values.service.targetPort }}
               name: ldap
           env:
+            - name: LDAP_LOG_LEVEL
+              value: "256"
+            - name: LDAP_ORGANISATION
+              value: "K3S Lan"
             - name: LDAP_DOMAIN
               value: "k3s.lan"
-            - name: LDAP_ADMIN_USERNAME
-              value: "admin"
+            - name: LDAP_BACKEND
+              value: "hdb"
+            - name: LDAP_TLS
+              value: "false"
+            - name: LDAP_TLS_ENFORCE
+              value: "false"
             - name: LDAP_ADMIN_PASSWORD
               value: "admin"
-            - name: LDAP_CONFIG_ADMIN_ENABLED
-              value: "yes"
-            - name: LDAP_CONFIG_ADMIN_USERNAME
-              value: "config"
             - name: LDAP_CONFIG_ADMIN_PASSWORD
               value: "config"
+            - name: LDAP_READONLY_USER
+              value: true
+            - name: LDAP_READONLY_USER_USERNAME
+              value: "readonly"
+            - name: LDAP_READONLY_USER_PASSWORD
+              value: "readonly"
+
+
             # - name: LDAP_USERS
             #   value: "user1,user2"
             # - name: LDAP_PASSWORDS
@@ -52,8 +64,6 @@ spec:
             # - name: LDAP_CUSTOM_LDIF_DIR
             # - name: LDAP_CUSTOM_SCHEMA_FILE
             # - name: LDAP_ULIMIT_NOFILES
-            - name: LDAP_ALLOW_ANON_BINDING
-              value: "yes"
-            - name: LDAP_LOG_LEVEL
-              value: "-1"
+            # - name: LDAP_ALLOW_ANON_BINDING
+            #   value: "yes"
             
