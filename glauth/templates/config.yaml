@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+data:
+  config.cfg: |-
+{{ .Files.Get "assets/config.cfg" | indent 4 }}

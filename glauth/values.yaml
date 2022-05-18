@@ -1,0 +1,14 @@
+glauth:
+  replicaCount: 1
+
+  image:
+    repository: "glauth/glauth"
+    tag: "v2.0.0"
+    pullPolicy: IfNotPresent
+
+  backend:
+    type: config
+    file: config.cfg
+
+  ingress:
+    enabled: false
