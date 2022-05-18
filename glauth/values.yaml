@@ -12,7 +12,3 @@ glauth:
 
   ingress:
     enabled: false
-
-  config:
-    storage:
-      access: ReadWriteOnce
