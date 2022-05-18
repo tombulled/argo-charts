@@ -8,7 +8,7 @@ glauth:
 
   backend:
     type: config
-    file: config.cfg
+    file: config/config.cfg
 
   ingress:
     enabled: false
