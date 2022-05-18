@@ -13,5 +13,5 @@ glauth:
   ingress:
     enabled: false
 
-  strorage:
+  storage:
     access: ReadWriteOnce
