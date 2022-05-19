@@ -1,0 +1,35 @@
+authentik:
+  replicas: 1
+
+  image:
+    pullPolicy: IfNotPresent
+    repository: ghcr.io/goauthentik/server
+    tag: 2022.4.1
+
+  secret_key: Parting-Estimator-Campsite-Rotten-Galvanize-Surface
+  avatars: none
+
+  error_reporting:
+    enabled: false
+
+  log_level: info
+
+  # need postgresql, redis
+  # env:
+
+  geoip:
+    enabled: false
+
+  worker:
+    replicas: 1
+
+  ingress:
+    enabled: true
+    ingressClassName: ingress-nginx
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /$1
+    hosts:
+      - host: authentik.k3s.lan
+        paths:
+          - path: /(.*)
+            pathType: Prefix
