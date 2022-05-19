@@ -46,6 +46,8 @@ authentik:
       postgresqlPassword: password
       postgresPassword: password
 
+      database: authentik
+
     image:
       registry: docker.io
       repository: bitnami/postgresql
