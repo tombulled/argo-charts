@@ -16,16 +16,8 @@ authentik:
 
     avatars: none
 
-    # postgresql:
-    #   host: postgresql
-    #   name: db
-    #   user: user
-    #   password: password
-    #   port: 5432
-
-    # redis:
-    #   host: redis-master
-    #   password: password
+    postgresql:
+      password: password
 
   geoip:
     enabled: false
@@ -46,8 +38,8 @@ authentik:
 
   postgresql:
     enabled: true
-    # postgresqlDatabase: authentik
-    # postgresqlUsername: authentik
+
+    postgresqlPassword: password
 
     image:
       registry: docker.io
