@@ -1,16 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Release.Name }}-proxy-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+  name: {{ .Release.Name }}-outpost
 spec:
   ingressClassName: ingress-nginx
   rules:
-    - host: proxy.authentik.k3s.lan
+    - host: authentik.k3s.lan
       http:
         paths:
-          - path: /(.*)
+          - path: /outpost.goauthentik.io
             pathType: Prefix
             backend:
               service:
