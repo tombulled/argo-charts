@@ -1,0 +1,18 @@
+redis:
+  image:
+    registry: docker.io
+    repository: bitnami/redis
+    tag: 6.2.7-debian-10-r0
+    pullPolicy: IfNotPresent
+
+  architecture: standalone
+
+  auth:
+    enabled: true
+    password: password
+
+  metrics:
+    enabled: false
+
+  tls:
+    enabled: false
