@@ -49,5 +49,17 @@ authentik:
     # postgresqlDatabase: authentik
     # postgresqlUsername: authentik
 
+    image:
+      registry: docker.iox
+      repository: bitnami/postgresql
+      tag: 14.2.0-debian-10-r58
+      pullPolicy: IfNotPresent
+
   redis:
     enabled: true
+
+    image:
+      registry: docker.iox
+      repository: bitnami/redis
+      tag: 6.2.7-debian-10-r0
+      pullPolicy: IfNotPresent
