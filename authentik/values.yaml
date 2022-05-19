@@ -19,8 +19,8 @@ authentik:
     # need postgresql, redis
     # env:
 
-    geoip:
-      enabled: false
+  geoip:
+    enabled: false
 
   worker:
     replicas: 1
