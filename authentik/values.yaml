@@ -41,11 +41,11 @@ authentik:
 
     postgresqlPassword: "ThisIsNotASecurePassword"
 
-    image:
-      registry: docker.io
-      repository: bitnami/postgresql
-      tag: 11.13.0
-      pullPolicy: IfNotPresent
+    # image:
+    #   registry: docker.io
+    #   repository: bitnami/postgresql
+    #   tag: 11.13.0
+    #   pullPolicy: IfNotPresent
 
   redis:
     enabled: true
