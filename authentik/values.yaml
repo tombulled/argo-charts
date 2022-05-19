@@ -16,8 +16,15 @@ authentik:
 
     avatars: none
 
-    # need postgresql, redis
-    # env:
+    postgresql:
+      host: postgresql
+      name: authentik
+      password: password
+      port: 5432
+
+    redis:
+      host: redis
+      password: password
 
   geoip:
     enabled: false
