@@ -50,7 +50,7 @@ authentik:
     # postgresqlUsername: authentik
 
     image:
-      registry: docker.iox
+      registry: docker.io
       repository: bitnami/postgresql
       tag: 14.2.0-debian-10-r58
       pullPolicy: IfNotPresent
@@ -59,7 +59,7 @@ authentik:
     enabled: true
 
     image:
-      registry: docker.iox
+      registry: docker.io
       repository: bitnami/redis
       tag: 6.2.7-debian-10-r0
       pullPolicy: IfNotPresent
