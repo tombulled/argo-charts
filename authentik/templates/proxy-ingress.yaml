@@ -14,4 +14,5 @@ spec:
             backend:
               service:
                 name: ak-outpost-authentik-embedded-outpost
-                port: 9000
+                port:
+                  name: http
