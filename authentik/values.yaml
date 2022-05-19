@@ -34,12 +34,12 @@ authentik:
   ingress:
     enabled: true
     ingressClassName: ingress-nginx
-    annotations:
-      nginx.ingress.kubernetes.io/rewrite-target: /$1
+    # annotations:
+    #   nginx.ingress.kubernetes.io/rewrite-target: /$1
     hosts:
       - host: authentik.k3s.lan
         paths:
-          - path: /(.*)
+          - path: / #(.*)
             pathType: Prefix
 
   postgresql:
