@@ -16,16 +16,16 @@ authentik:
 
     avatars: none
 
-    postgresql:
-      host: postgresql
-      name: db
-      user: user
-      password: password
-      port: 5432
+    # postgresql:
+    #   host: postgresql
+    #   name: db
+    #   user: user
+    #   password: password
+    #   port: 5432
 
-    redis:
-      host: redis-master
-      password: password
+    # redis:
+    #   host: redis-master
+    #   password: password
 
   geoip:
     enabled: false
@@ -43,3 +43,11 @@ authentik:
         paths:
           - path: /(.*)
             pathType: Prefix
+
+  postgresql:
+    enabled: true
+    # postgresqlDatabase: authentik
+    # postgresqlUsername: authentik
+
+  redis:
+    enabled: true
