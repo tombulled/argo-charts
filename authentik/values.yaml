@@ -10,6 +10,9 @@ authentik:
     error_reporting:
       enabled: false
 
+    disable_update_check: true
+    disable_startup_analytics: true
+
     log_level: info
 
     secret_key: "Parting-Estimator-Campsite-Rotten-Galvanize-Surface"
@@ -18,6 +21,9 @@ authentik:
 
     postgresql:
       password: "ThisIsNotASecurePassword"
+
+  env:
+    AK_ADMIN_PASS: password
 
   geoip:
     enabled: false
