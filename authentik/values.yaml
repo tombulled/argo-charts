@@ -18,12 +18,13 @@ authentik:
 
     postgresql:
       host: postgresql
-      name: authentik
+      name: db
+      user: user
       password: password
       port: 5432
 
     redis:
-      host: redis
+      host: redis-master
       password: password
 
   geoip:
