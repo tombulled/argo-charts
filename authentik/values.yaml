@@ -6,19 +6,21 @@ authentik:
     repository: ghcr.io/goauthentik/server
     tag: 2022.4.1
 
-  secret_key: Parting-Estimator-Campsite-Rotten-Galvanize-Surface
-  avatars: none
+  authentik:
+    error_reporting:
+      enabled: false
 
-  error_reporting:
-    enabled: false
+    log_level: info
 
-  log_level: info
+    secret_key: "Parting-Estimator-Campsite-Rotten-Galvanize-Surface"
 
-  # need postgresql, redis
-  # env:
+    avatars: none
 
-  geoip:
-    enabled: false
+    # need postgresql, redis
+    # env:
+
+    geoip:
+      enabled: false
 
   worker:
     replicas: 1
