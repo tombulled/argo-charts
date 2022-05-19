@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: ingress-nginx
   rules:
-    - host: authentik.k3s.lan
+    - host: nope.authentik.k3s.lan
       http:
         paths:
           - path: /outpost.goauthentik.io
