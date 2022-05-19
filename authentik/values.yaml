@@ -40,18 +40,11 @@ authentik:
     enabled: true
 
     postgresqlPassword: password
-    postgresPassword: password
-
-    auth:
-      postgresqlPassword: password
-      postgresPassword: password
-
-      database: authentik
 
     image:
       registry: docker.io
       repository: bitnami/postgresql
-      tag: 11.16.0
+      tag: 11.13.0
       pullPolicy: IfNotPresent
 
   redis:
