@@ -17,7 +17,7 @@ authentik:
     avatars: none
 
     postgresql:
-      password: password
+      password: "ThisIsNotASecurePassword"
 
   geoip:
     enabled: false
@@ -39,7 +39,7 @@ authentik:
   postgresql:
     enabled: true
 
-    postgresqlPassword: password
+    postgresqlPassword: "ThisIsNotASecurePassword"
 
     image:
       registry: docker.io
