@@ -49,9 +49,7 @@ argo-cd:
       hosts:
         - argo-cd.k3s.lan
       paths:
-        - /(.*)
-      annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /$1
+        - /
       https: true
 
     extraArgs:
