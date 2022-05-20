@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: common-authentik-outpost-ingress
+spec:
+  ingressClassName: ingress-nginx
+  rules:
+  - host: "*.k3s.lan"
+    http:
+      paths:
+      - path: /outpost.goauthentik.io
+        pathType: Prefix
+        backend:
+          service:
+            name: ak-outpost-authentik-embedded-outpost
+            port:
+              name: http

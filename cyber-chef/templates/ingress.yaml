@@ -13,13 +13,6 @@ spec:
   - host: cyber-chef.k3s.lan
     http:
       paths:
-      - path: /outpost.goauthentik.io
-        pathType: Prefix
-        backend:
-          service:
-            name: ak-outpost-authentik-embedded-outpost
-            port:
-              name: http
       - path: /
         pathType: Prefix
         backend:
