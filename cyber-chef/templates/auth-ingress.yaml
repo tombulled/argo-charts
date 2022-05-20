@@ -1,11 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: common-authentik-outpost-ingress
+  name: {{ .Release.Name }}-authentik-outpost-ingress
 spec:
   ingressClassName: ingress-nginx
   rules:
-  - host: "*.k3s.lan"
+  - host: cyber-chef.k3s.lan
     http:
       paths:
       - path: /outpost.goauthentik.io
