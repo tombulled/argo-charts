@@ -1,0 +1,9 @@
+apiVersion: v2
+name: authentik
+description: A chart for authentik
+type: application
+version: 0.1.0
+appVersion: 2022.5.1
+dependencies:
+- name: authentik
+  version: 2022.4.3

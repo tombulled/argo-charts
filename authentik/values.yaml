@@ -1,0 +1,61 @@
+authentik:
+  replicas: 1
+
+  image:
+    pullPolicy: IfNotPresent
+    repository: ghcr.io/goauthentik/server
+    tag: 2022.5.1
+
+  authentik:
+    error_reporting:
+      enabled: false
+
+    disable_update_check: true
+    disable_startup_analytics: true
+
+    log_level: info
+
+    secret_key: "Parting-Estimator-Campsite-Rotten-Galvanize-Surface"
+
+    avatars: none
+
+    postgresql:
+      password: "ThisIsNotASecurePassword"
+
+  env:
+    AK_ADMIN_PASS: password
+
+  geoip:
+    enabled: false
+
+  worker:
+    replicas: 1
+
+  ingress:
+    enabled: true
+    ingressClassName: ingress-nginx
+    hosts:
+      - host: authentik.k3s.lan
+        paths:
+          - path: /
+            pathType: Prefix
+
+  postgresql:
+    enabled: true
+
+    postgresqlPassword: "ThisIsNotASecurePassword"
+
+    image:
+      registry: docker.io
+      repository: bitnami/postgresql
+      tag: 11.13.0
+      pullPolicy: IfNotPresent
+
+  redis:
+    enabled: true
+
+    image:
+      registry: docker.io
+      repository: bitnami/redis
+      tag: 6.2.7
+      pullPolicy: IfNotPresent

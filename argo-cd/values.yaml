@@ -1,0 +1,80 @@
+argo-cd:
+  replicas: 1
+
+  image:
+    repository: quay.io/argoproj/argocd
+    tag: v2.3.3
+    imagePullPolicy: IfNotPresent
+
+  controller:
+    metrics:
+      enabled: true
+
+    clusterRoleRules:
+      rules:
+        - apiGroups:
+          - '*'
+          resources:
+          - '*'
+          verbs:
+          - '*'
+        - nonResourceURLs:
+          - '*'
+          verbs:
+          - '*'
+
+  dex:
+    enabled: false
+
+  redis:
+    enabled: true
+
+    image:
+      repository: redis
+      tag: 6.2.6-alpine
+      imagePullPolicy: IfNotPresent
+
+  server:
+    replicas: 1
+
+    service:
+      type: ClusterIP
+
+    metrics:
+      enabled: true
+
+    ingress:
+      enabled: true
+      ingressClassName: ingress-nginx
+      hosts:
+        - argo-cd.k3s.lan
+      paths:
+        - /
+      https: true
+
+    extraArgs:
+      - --insecure
+
+  repoServer:
+    replicas: 1
+
+    metrics:
+      enabled: true
+
+  configs:
+    secret:
+      argocdServerAdminPassword: $2a$10$RfZBdyaoNqCqOidEUCCY6OwNIZfOaytsGzdr9Ie6NPMRhDuwSWH8y
+
+  applicationSet:
+    replicaCount: 1
+
+    image:
+      repository: quay.io/argoproj/argocd-applicationset
+      tag: v0.4.1
+      imagePullPolicy: IfNotPresent
+
+    metrics:
+      enabled: false
+
+  notifications:
+    enabled: false
