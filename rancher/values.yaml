@@ -1,0 +1,8 @@
+rancher:
+  replicas: 3
+
+  hostname: rancher.k3s.lan
+
+  ingress:
+    tls:
+      source: rancher
