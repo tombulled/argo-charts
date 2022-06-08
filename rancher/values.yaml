@@ -3,6 +3,6 @@ rancher:
 
   hostname: rancher.k3s.lan
 
-  # ingress:
-  #   tls:
-  #     source: rancher
+  ingress:
+    tls:
+      source: rancher
