@@ -1,0 +1,11 @@
+step-issuer:
+  replicaCount: 1
+
+  image:
+    repository: cr.step.sm/smallstep/step-issuer
+    tag: 0.6.4
+    pullPolicy: IfNotPresent
+
+  stepIssuer:
+    provisioner:
+      name: admin
