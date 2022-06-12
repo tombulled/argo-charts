@@ -4,9 +4,9 @@ metadata:
   name: k3s-lan
 spec:
   secretName: tls-k3s-lan
-  commonName: "gitmoji.k3s.lan"
+  commonName: "*.k3s.lan"
   dnsNames:
-    - "gitmoji.k3s.lan"
+    - "*.k3s.lan"
   ipAddresses:
     - "127.0.0.1"
   duration: 24h
