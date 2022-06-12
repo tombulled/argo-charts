@@ -45,6 +45,6 @@ grafana:
     #   nginx.ingress.kubernetes.io/auth-snippet: proxy_set_header X-Forwarded-Host $http_host;
     tls: true
     extraTls:
-      - secretName: default/tls-k3s-lan
+      - secretName: tls-k3s-lan
         hosts:
           - grafana.k3s.lan
