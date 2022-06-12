@@ -37,7 +37,7 @@ grafana:
     # pathType: Prefix
     # path: /
     hostname: grafana.k3s.lan
-    # ingressClassName: ingress-nginx
+    ingressClassName: ingress-nginx
     # annotations:
     #   nginx.ingress.kubernetes.io/auth-url: http://ak-outpost-authentik-embedded-outpost.default.svc.cluster.local:9000/outpost.goauthentik.io/auth/nginx
     #   nginx.ingress.kubernetes.io/auth-signin: https://grafana.k3s.lan/outpost.goauthentik.io/start?rd=$escaped_request_uri
