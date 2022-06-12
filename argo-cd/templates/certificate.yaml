@@ -13,5 +13,5 @@ spec:
   renewBefore: 8h
   issuerRef:
     group: certmanager.step.sm
-    kind: StepIssuer
+    kind: StepClusterIssuer
     name: step-issuer
