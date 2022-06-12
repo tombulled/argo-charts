@@ -28,4 +28,7 @@ step-certificates:
     enabled: true
     annotations: {}
     hosts:
-      - "ca.k3s.lan"
+      - host: "ca.k3s.lan"
+        paths:
+          - path: /
+            type: Prefix
