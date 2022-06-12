@@ -40,7 +40,7 @@ grafana:
     ingressClassName: ingress-nginx
     annotations:
       # cert-manager.io/issuer-kind: CertificateRequest
-      cert-manager.io/issuer-kind: StepClusterIssuer
+      # cert-manager.io/issuer-kind: StepClusterIssuer
       # cert-manager.io/issuer-name: step-issuer
       cert-manager.io/issuer: step-issuer
       # cert-manager.io/cluster-issuer: step-issuer
