@@ -20,4 +20,5 @@ step-issuer:
 
       passwordRef:
         name: step-certificates-provisioner-password
+        namespace: default
         key: password
