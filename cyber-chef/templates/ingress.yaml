@@ -9,6 +9,10 @@ metadata:
     nginx.ingress.kubernetes.io/auth-snippet: proxy_set_header X-Forwarded-Host $http_host;
 spec:
   ingressClassName: ingress-nginx
+  tls:
+  - hosts:
+    - cyber-chef.k3s.lan
+    secretName: tls-k3s-lan
   rules:
   - host: cyber-chef.k3s.lan
     http:
