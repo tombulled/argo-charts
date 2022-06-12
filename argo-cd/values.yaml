@@ -50,6 +50,10 @@ argo-cd:
         - argo-cd.k3s.lan
       paths:
         - /
+      tls:
+        - secretName: tls-k3s-lan
+          hosts:
+            - argo-cd.k3s.lan
       https: true
 
     extraArgs:
