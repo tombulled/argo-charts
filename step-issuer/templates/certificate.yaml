@@ -3,10 +3,10 @@ kind: Certificate
 metadata:
   name: k3s-lan
 spec:
-  secretName: k3s-lan-tls
-  commonName: "*.k3s.lan"
+  secretName: tls-k3s-lan
+  commonName: "gitmoji.k3s.lan"
   dnsNames:
-    - "*.k3s.lan"
+    - "gitmoji.k3s.lan"
   ipAddresses:
     - "127.0.0.1"
   duration: 24h

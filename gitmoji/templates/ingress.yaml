@@ -7,7 +7,7 @@ spec:
   tls:
   - hosts:
     - gitmoji.k3s.lan
-    secretName: k3s-lan-tls
+    secretName: tls-k3s-lan
   rules:
   - host: gitmoji.k3s.lan
     http:
