@@ -18,14 +18,14 @@ step-certificates:
   ca:
     name: "Smallstep"
     dns: "ca.k3s.lan"
-    password: "abc123"
+    # password: "abc123"
 
     kms:
       type: ""
 
     provisioner:
       name: "admin"
-      password: "abc123"
+      # password: "abc123"
 
   ingress:
     enabled: true
