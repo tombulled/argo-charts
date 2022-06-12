@@ -49,12 +49,23 @@ argo-cd:
       hosts: ["argo-cd.k3s.lan"]
       paths: ["/"]
       tls:
-        - secretName: tls-k3s-lan.default
+        - secretName: argo-cd-server-tls
           hosts: ["argo-cd.k3s.lan"]
       https: true
 
     extraArgs:
       - --insecure
+
+    certificate:
+      enabled: true
+      domain: argo-cd.k3s.lan
+      duration: 24h
+      renewBefore: 8h
+      issuer:
+        group: certmanager.step.sm
+        kind: StepIssuer
+        name: step-issuer
+      secretName: argo-cd-server-tls
 
   repoServer:
     replicas: 1
