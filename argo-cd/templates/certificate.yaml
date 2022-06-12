@@ -14,4 +14,4 @@ spec:
   issuerRef:
     group: certmanager.step.sm
     kind: StepIssuer
-    name: step-issuer.default
+    name: step-issuer
