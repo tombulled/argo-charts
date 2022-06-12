@@ -34,8 +34,8 @@ grafana:
 
   ingress:
     enabled: true
-    # pathType: Prefix
-    # path: /
+    pathType: Prefix
+    path: /
     hostname: grafana.k3s.lan
     ingressClassName: ingress-nginx
     # annotations:
@@ -45,6 +45,6 @@ grafana:
     #   nginx.ingress.kubernetes.io/auth-snippet: proxy_set_header X-Forwarded-Host $http_host;
     tls: true
     extraTls:
-      - secretName: tls-k3s-lan
+      - secretName: default/tls-k3s-lan
         hosts:
           - grafana.k3s.lan
