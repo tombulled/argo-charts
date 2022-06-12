@@ -56,16 +56,17 @@ argo-cd:
     extraArgs:
       - --insecure
 
-    certificate:
-      enabled: true
-      domain: argo-cd.k3s.lan
-      duration: 24h
-      renewBefore: 8h
-      issuer:
-        group: certmanager.step.sm
-        kind: StepIssuer
-        name: step-issuer
-      secretName: argo-cd-server-tls
+    # certificate:
+    #   enabled: true
+    #   domain: argo-cd.k3s.lan
+    #   duration: 24h
+    #   renewBefore: 8h
+    #   issuer:
+    #     group: certmanager.step.sm
+    #     # kind: StepIssuer
+    #     kind: Issuer
+    #     name: step-issuer
+    #   secretName: argo-cd-server-tls
 
   repoServer:
     replicas: 1
