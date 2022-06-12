@@ -20,8 +20,8 @@ step-certificates:
     dns: "ca.k3s.lan"
     # password: "abc123"
 
-    kms:
-      type: '" --foo "'
+    # kms:
+    #   type: '" --foo "'
 
     provisioner:
       name: "admin"
