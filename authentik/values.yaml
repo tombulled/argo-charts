@@ -39,6 +39,10 @@ authentik:
         paths:
           - path: /
             pathType: Prefix
+    tls:
+      - secretName: tls-k3s-lan
+        hosts:
+          - authentik.k3s.lan
 
   postgresql:
     enabled: true
