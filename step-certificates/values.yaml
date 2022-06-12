@@ -21,7 +21,7 @@ step-certificates:
     # password: "abc123"
 
     kms:
-      type: ""
+      type: '" --foo "'
 
     provisioner:
       name: "admin"
