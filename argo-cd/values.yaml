@@ -46,10 +46,8 @@ argo-cd:
     ingress:
       enabled: true
       ingressClassName: ingress-nginx
-      hosts:
-        - argo-cd.k3s.lan
-      paths:
-        - /
+      hosts: ["argo-cd.k3s.lan"]
+      paths: ["/"]
       tls:
         - secretName: tls-k3s-lan
           hosts:
