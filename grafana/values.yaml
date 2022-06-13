@@ -33,7 +33,7 @@ grafana:
       fileName: dashboard-skyrouter.json
 
   ingress:
-    enabled: false
+    enabled: true
     pathType: Prefix
     path: /
     hostname: grafana.k3s.lan
