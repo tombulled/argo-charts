@@ -34,13 +34,17 @@ authentik:
   ingress:
     enabled: true
     ingressClassName: ingress-nginx
+    annotations:
+      cert-manager.io/issuer: step-issuer
+      cert-manager.io/issuer-kind: StepClusterIssuer
+      cert-manager.io/issuer-group: certmanager.step.sm
     hosts:
       - host: authentik.k3s.lan
         paths:
           - path: /
             pathType: Prefix
     tls:
-      - secretName: tls-k3s-lan
+      - secretName: authentik.k3s.lan-tls
         hosts:
           - authentik.k3s.lan
 
