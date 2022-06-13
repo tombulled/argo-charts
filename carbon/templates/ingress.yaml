@@ -24,6 +24,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: {{ .Release.Name }}
+            name: grafana
             port:
               name: http
