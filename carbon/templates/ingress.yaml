@@ -14,10 +14,10 @@ spec:
   ingressClassName: ingress-nginx
   tls:
   - hosts:
-    - carbon.k3s.lan
-    secretName: carbon.k3s.lan-tls
+    - grafana.k3s.lan
+    secretName: grafana.k3s.lan-tls
   rules:
-  - host: carbon.k3s.lan
+  - host: grafana.k3s.lan
     http:
       paths:
       - path: /
