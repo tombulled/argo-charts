@@ -1,0 +1,36 @@
+step-certificates:
+  replicaCount: 1
+
+  image:
+    repository: cr.step.sm/smallstep/step-ca
+    initContainerRepository: busybox:latest
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  bootstrap:
+    enabled: true
+
+    image:
+      repository: cr.step.sm/smallstep/step-ca-bootstrap
+      tag: latest
+      pullPolicy: IfNotPresent
+
+  ca:
+    name: "Smallstep"
+    password: "abc123"
+
+    kms:
+      type: ""
+
+    provisioner:
+      name: "admin"
+      password: "abc123"
+
+  ingress:
+    enabled: true
+    annotations: {}
+    hosts:
+      - host: "ca.tom.lan"
+        paths:
+          - path: /
+            type: Prefix
