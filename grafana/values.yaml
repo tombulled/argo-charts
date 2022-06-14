@@ -36,7 +36,7 @@ grafana:
     enabled: true
     pathType: Prefix
     path: /
-    hostname: test.k3s.lan
+    hostname: grafana.k3s.lan
     ingressClassName: ingress-nginx
     annotations:
       nginx.org/ssl-services: "step-certificates"
