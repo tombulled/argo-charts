@@ -18,6 +18,10 @@ grafana:
   metrics:
     enabled: false
 
+  config:
+    useGrafanaIniFile: true
+    grafanaIniConfigMap: grafana-config
+
   dashboardsProvider:
     enabled: true
   
