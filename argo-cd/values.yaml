@@ -46,15 +46,18 @@ argo-cd:
     ingress:
       enabled: true
       ingressClassName: ingress-nginx
-      hosts: ["argo-cd.tom.lan"]
-      paths: ["/"]
+      hosts:
+        - argo-cd.tom.lan
+      paths:
+        - /
       annotations:
         cert-manager.io/issuer: step-issuer
         cert-manager.io/issuer-kind: StepClusterIssuer
         cert-manager.io/issuer-group: certmanager.step.sm
       tls:
         - secretName: argo-cd.tom.lan-tls
-          hosts: ["argo-cd.tom.lan"]
+          hosts:
+            - argo-cd.tom.lan
       https: true
 
     extraArgs:

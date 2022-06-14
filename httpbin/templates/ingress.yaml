@@ -10,10 +10,10 @@ spec:
   ingressClassName: ingress-nginx
   tls:
   - hosts:
-    - httpbin.k3s.lan
-    secretName: httpbin.k3s.lan-tls
+    - httpbin.tom.lan
+    secretName: httpbin.tom.lan-tls
   rules:
-  - host: httpbin.k3s.lan
+  - host: httpbin.tom.lan
     http:
       paths:
       - path: /

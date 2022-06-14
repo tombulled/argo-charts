@@ -39,14 +39,14 @@ authentik:
       cert-manager.io/issuer-kind: StepClusterIssuer
       cert-manager.io/issuer-group: certmanager.step.sm
     hosts:
-      - host: authentik.k3s.lan
+      - host: authentik.tom.lan
         paths:
           - path: /
             pathType: Prefix
     tls:
-      - secretName: authentik.k3s.lan-tls
+      - secretName: authentik.tom.lan-tls
         hosts:
-          - authentik.k3s.lan
+          - authentik.tom.lan
 
   postgresql:
     enabled: true

@@ -10,10 +10,10 @@ spec:
   ingressClassName: ingress-nginx
   tls:
   - hosts:
-    - gitmoji.k3s.lan
-    secretName: gitmoji.k3s.lan-tls
+    - gitmoji.tom.lan
+    secretName: gitmoji.tom.lan-tls
   rules:
-  - host: gitmoji.k3s.lan
+  - host: gitmoji.tom.lan
     http:
       paths:
       - path: /

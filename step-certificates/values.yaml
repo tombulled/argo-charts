@@ -30,7 +30,7 @@ step-certificates:
     enabled: true
     annotations: {}
     hosts:
-      - host: "ca.k3s.lan"
+      - host: "ca.tom.lan"
         paths:
           - path: /
             type: Prefix
