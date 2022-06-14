@@ -1,0 +1,61 @@
+grafana:
+  replicaCount: 1
+
+  image:
+    tag: 8.3.4-debian-10-r0
+
+  service:
+    type: ClusterIP
+    ports:
+      grafana: 80
+  
+  admin:
+    password: password
+
+  persistence:
+    enabled: false
+
+  metrics:
+    enabled: false
+
+  # config:
+  #   useGrafanaIniFile: true
+  #   grafanaIniConfigMap: grafana-config
+
+  dashboardsProvider:
+    enabled: true
+  
+  datasources:
+    secretName: grafana-datasources
+
+  dashboardsConfigMaps:
+    - configMapName: grafana-dashboard-skyrouter
+      fileName: dashboard-skyrouter.json
+
+  ingress:
+    enabled: true
+    pathType: Prefix
+    path: /
+    hostname: grafana.k3s.lan
+    ingressClassName: ingress-nginx
+    annotations:
+      nginx.org/ssl-services: "step-certificates"
+      cert-manager.io/issuer: step-issuer
+      cert-manager.io/issuer-kind: StepClusterIssuer
+      cert-manager.io/issuer-group: certmanager.step.sm
+      # cert-manager.io/issuer-kind: CertificateRequest
+      # cert-manager.io/issuer-kind: StepClusterIssuer
+      # cert-manager.io/issuer-name: step-issuer
+      # cert-manager.io/issuer: step-issuer
+      # cert-manager.io/cluster-issuer: step-issuer
+    # annotations:
+    #   nginx.ingress.kubernetes.io/auth-url: http://ak-outpost-authentik-embedded-outpost.default.svc.cluster.local:9000/outpost.goauthentik.io/auth/nginx
+    #   nginx.ingress.kubernetes.io/auth-signin: https://grafana.k3s.lan/outpost.goauthentik.io/start?rd=$escaped_request_uri
+    #   nginx.ingress.kubernetes.io/auth-response-headers: Set-Cookie,X-authentik-username,X-authentik-groups,X-authentik-email,X-authentik-name,X-authentik-uid
+    #   nginx.ingress.kubernetes.io/auth-snippet: proxy_set_header X-Forwarded-Host $http_host;
+    tls: true
+    # extraTls:
+      # - secretName: grafana-k3s-lan-tls
+      # - secretName: tls-k3s-lan
+      #   hosts:
+      #     - grafana.k3s.lan
