@@ -73,7 +73,7 @@ config:
           url: "https://argo-cd.tom.lan/applications"
           target: "_blank"
         - name: "Gitmoji"
-          logo: "assets/tools/sample.png"
+          logo: "assets/images/gitmoji.png"
           subtitle: "An emoji guide for your commit messages"
           keywords: "gitmoji"
           url: "https://gitmoji.tom.lan/"
