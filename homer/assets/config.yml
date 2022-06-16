@@ -10,6 +10,14 @@ links:
     icon: "fab fa-github"
     url: "https://github.com/tombulled"
     target: "_blank"
+  - name: "PyPI"
+    icon: "fab fa-python"
+    url: "https://pypi.org/user/tbulled/"
+    target: "_blank"
+  - name: "Docker Hub"
+    icon: "fab fa-docker"
+    url: "https://hub.docker.com/u/tombulled"
+    target: "_blank"
 
 services:
   - name: "Applications"
