@@ -110,6 +110,12 @@ config:
           keywords: "httpbin"
           url: "https://httpbin.tom.lan/"
           target: "_blank"
+        - name: "Uptime Kuma"
+          logo: "assets/images/uptime-kuma.svg"
+          subtitle: "A fancy self-hosted monitoring tool"
+          keywords: "uptime kuma"
+          url: "https://uptime-kuma.tom.lan/dashboard"
+          target: "_blank"
     - name: "Monitoring"
       icon: "fas fa-cloud"
       items:

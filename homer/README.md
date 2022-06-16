@@ -19,3 +19,4 @@ Helm chart for [Homer](https://github.com/bastienwirtz/homer)
 * Proxmox: https://www.proxmox.com/images/proxmox/proxmox-logo-color-stacked.png
 * Kasm: https://www.kasmweb.com/img/favicon.png
 * HTTPBin: https://github.com/postmanlabs/httpbin/blob/master/httpbin/static/favicon.ico
+* Uptime Kuma: https://github.com/louislam/uptime-kuma/blob/master/public/icon.svg
