@@ -6,4 +6,4 @@ metadata:
     app: {{ .Release.Name }}
 data:
   config.yml: |-
-{{ .Values.config | indent 4 }}
+{{ .Values.config | toYaml | indent 4 }}
