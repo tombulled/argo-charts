@@ -16,3 +16,4 @@ Helm chart for [Homer](https://github.com/bastienwirtz/homer)
 * Cyber Chef: https://github.com/gchq/CyberChef/blob/master/src/web/static/images/logo/cyberchef_hat.svg
 * Pi-hole: https://github.com/pi-hole/AdminLTE/blob/master/img/logo.svg
 * Rancher: https://github.com/rancher/ui/blob/master/public/assets/images/logos/main.svg
+* Proxmox: https://www.proxmox.com/images/proxmox/proxmox-logo-color-stacked.png

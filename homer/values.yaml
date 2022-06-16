@@ -55,7 +55,7 @@ config:
           url: "http://pihole.lan/admin/"
           target: "_blank"
         - name: "Proxmox"
-          logo: "assets/tools/sample.png"
+          logo: "assets/images/proxmox.png"
           subtitle: "Open-source platform for enterprise virtualization"
           keywords: "proxmox"
           url: "https://proxmox.lan:8006/"
