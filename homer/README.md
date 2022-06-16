@@ -18,3 +18,4 @@ Helm chart for [Homer](https://github.com/bastienwirtz/homer)
 * Rancher: https://github.com/rancher/ui/blob/master/public/assets/images/logos/main.svg
 * Proxmox: https://www.proxmox.com/images/proxmox/proxmox-logo-color-stacked.png
 * Kasm: https://www.kasmweb.com/img/favicon.png
+* HTTPBin: https://github.com/postmanlabs/httpbin/blob/master/httpbin/static/favicon.ico
