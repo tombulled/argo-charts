@@ -10,3 +10,4 @@ Helm chart for [Homer](https://github.com/bastienwirtz/homer)
     1. https://github.com/argoproj/argo-cd/blob/master/ui/src/assets/images/argo.png
     2. https://github.com/argoproj/argoproj/blob/master/docs/assets/argo.svg
     3. https://github.com/cncf/artwork/blob/master/projects/argo/icon/color/argo-icon-color.svg
+* Authentik: https://github.com/goauthentik/authentik/blob/main/website/static/img/icon.png
