@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  repository: tombulled/homer
+  tag: 22.06.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  host: homer.tom.lan
+  auth: true
+  tls: true
