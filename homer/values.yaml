@@ -74,7 +74,7 @@ config:
           target: "_blank"
         - name: "Gitmoji"
           logo: "assets/tools/sample.png"
-          subtitle: ""
+          subtitle: "An emoji guide for your commit messages"
           keywords: "gitmoji"
           url: "https://gitmoji.tom.lan/"
           target: "_blank"
