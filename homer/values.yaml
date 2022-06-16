@@ -70,7 +70,7 @@ config:
       icon: "fas fa-cloud"
       items:
         - name: "Argo CD"
-          logo: "assets/tools/sample.png"
+          logo: "assets/images/argo-cd.svg"
           subtitle: "Declarative continuous deployment for Kubernetes"
           keywords: "argo"
           url: "https://argo-cd.tom.lan/applications"
@@ -115,7 +115,7 @@ config:
       icon: "fas fa-cloud"
       items:
         - name: "Prometheus"
-          logo: "assets/images/prometheus.png"
+          logo: "assets/images/prometheus.svg"
           subtitle: "Monitoring system and time series database"
           keywords: "prometheus"
           url: "https://prometheus.tom.lan/"
