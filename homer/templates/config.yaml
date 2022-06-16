@@ -6,4 +6,4 @@ metadata:
     app: {{ .Release.Name }}
 data:
   config.yml: |-
-{{ .Files.Get "assets/config.yml" | indent 4 }}
+{{ .Values.config | indent 4 }}
