@@ -1,0 +1,23 @@
+title: "TOM.LAN"
+subtitle: "Dashboard"
+logo: "logo.png"
+
+header: true
+footer: false
+
+links:
+  - name: "GitHub"
+    icon: "fab fa-github"
+    url: "https://github.com/tombulled"
+    target: "_blank"
+
+services:
+  - name: "Applications"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Proxmox"
+        logo: "assets/tools/sample.png"
+        subtitle: "for vms"
+        keywords: "proxmox pve vm"
+        url: "https://proxmox.lan:8006/"
+        target: "_blank"

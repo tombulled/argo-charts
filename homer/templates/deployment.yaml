@@ -15,7 +15,15 @@ spec:
       labels:
         app: {{ .Release.Name }}
     spec:
+      volumes:
+      - name: config
+        configMap:
+          name: {{ .Release.Name }}-config
       containers:
       - name: {{ .Release.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        volumeMounts:
+        - name: config
+          mountPath: /app/assets/config.yml
+          subPath: config.yml
