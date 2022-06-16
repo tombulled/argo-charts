@@ -43,7 +43,7 @@ config:
       icon: "fas fa-cloud"
       items:
         - name: "Kasm Workspaces"
-          logo: "assets/tools/sample.png"
+          logo: "assets/images/kasm.png"
           subtitle: "Containerized workload streaming"
           keywords: "kasm"
           url: "https://kasm.lan/#/dashboard"
