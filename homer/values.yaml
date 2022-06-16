@@ -15,7 +15,6 @@ ingress:
   auth: true
   tls: true
 
-
 config:
   title: "TOM.LAN"
   subtitle: "Dashboard"

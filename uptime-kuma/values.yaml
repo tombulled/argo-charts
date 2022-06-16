@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  repository: louislam/uptime-kuma
+  tag: 1.16.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3001
+
+ingress:
+  host: uptime-kuma.tom.lan
+  auth: true
+  tls: true
