@@ -13,3 +13,4 @@ Helm chart for [Homer](https://github.com/bastienwirtz/homer)
 * Authentik: https://github.com/goauthentik/authentik/blob/main/website/static/img/icon.png
 * Gitmoji: https://github.com/carloscuesta/gitmoji/blob/master/public/static/apple-icon.png
 * Carbon: https://github.com/carbon-app/carbon/blob/main/public/static/brand/icon.png
+* Cyber Chef: https://github.com/gchq/CyberChef/blob/master/src/web/static/images/logo/cyberchef_hat.svg
