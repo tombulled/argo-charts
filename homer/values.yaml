@@ -1,0 +1,133 @@
+replicaCount: 1
+
+image:
+  repository: tombulled/homer
+  tag: 22.06.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  host: homer.tom.lan
+  auth: true
+  tls: true
+
+config:
+  title: "TOM.LAN"
+  subtitle: "Dashboard"
+  logo: "logo.png"
+
+  header: true
+  footer: false
+
+  links:
+    - name: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/tombulled"
+      target: "_blank"
+    - name: "PyPI"
+      icon: "fab fa-python"
+      url: "https://pypi.org/user/tbulled/"
+      target: "_blank"
+    - name: "Docker Hub"
+      icon: "fab fa-docker"
+      url: "https://hub.docker.com/u/tombulled"
+      target: "_blank"
+
+  services:
+    - name: "Infrastructure"
+      icon: "fas fa-cloud"
+      items:
+        - name: "Kasm Workspaces"
+          logo: "assets/images/kasm.png"
+          subtitle: "Containerized workload streaming"
+          keywords: "kasm"
+          url: "https://kasm.lan/#/dashboard"
+          target: "_blank"
+        - name: "Pi-hole"
+          logo: "assets/images/pi-hole.svg"
+          subtitle: "A black hole for Internet advertisements"
+          keywords: "pihole"
+          url: "http://pihole.lan/admin/"
+          target: "_blank"
+        - name: "Proxmox"
+          logo: "assets/images/proxmox.png"
+          subtitle: "Open-source platform for enterprise virtualization"
+          keywords: "proxmox"
+          url: "https://proxmox.lan:8006/"
+          target: "_blank"
+        - name: "Rancher"
+          logo: "assets/images/rancher.svg"
+          subtitle: "Complete container management platform"
+          keywords: "rancher"
+          url: "https://rancher.lan/dashboard/home"
+          target: "_blank"
+    - name: "Applications"
+      icon: "fas fa-cloud"
+      items:
+        - name: "Argo CD"
+          logo: "assets/images/argo-cd.svg"
+          subtitle: "Declarative continuous deployment for Kubernetes"
+          keywords: "argo"
+          url: "https://argo-cd.tom.lan/applications"
+          target: "_blank"
+        - name: "Authentik"
+          logo: "assets/images/authentik.png"
+          subtitle: "Open-Source Identity Provider"
+          keywords: "authentik"
+          url: "https://authentik.tom.lan/"
+          target: "_blank"
+        - name: "Carbon"
+          logo: "assets/images/carbon.png"
+          subtitle: "Create beautiful source code images"
+          keywords: "carbon"
+          url: "https://carbon.tom.lan/"
+          target: "_blank"
+        - name: "Cyber Chef"
+          logo: "assets/images/cyber-chef.svg"
+          subtitle: "The Cyber Swiss Army Knife"
+          keywords: "cyber-chef"
+          url: "https://cyber-chef.tom.lan/"
+          target: "_blank"
+        - name: "Gitmoji"
+          logo: "assets/images/gitmoji.png"
+          subtitle: "An emoji guide for your commit messages"
+          keywords: "gitmoji"
+          url: "https://gitmoji.tom.lan/"
+          target: "_blank"
+        - name: "Hello World"
+          logo: "assets/tools/sample.png"
+          subtitle: "Hello, World!"
+          keywords: "hello-world"
+          url: "https://hello-world.tom.lan/"
+          target: "_blank"
+        - name: "HTTPBin"
+          logo: "assets/images/httpbin.ico"
+          subtitle: "HTTP Request & Response Service"
+          keywords: "httpbin"
+          url: "https://httpbin.tom.lan/"
+          target: "_blank"
+        - name: "Uptime Kuma"
+          logo: "assets/images/uptime-kuma.svg"
+          subtitle: "A fancy self-hosted monitoring tool"
+          keywords: "uptime kuma"
+          url: "https://uptime-kuma.tom.lan/dashboard"
+          target: "_blank"
+    - name: "Monitoring"
+      icon: "fas fa-cloud"
+      items:
+        - name: "Grafana"
+          logo: "assets/images/grafana.svg"
+          subtitle: "Observability and data visualisation platform"
+          keywords: "grafana"
+          url: "https://grafana.tom.lan/"
+          target: "_blank"
+        - name: "Prometheus"
+          logo: "assets/images/prometheus.svg"
+          subtitle: "Monitoring system and time series database"
+          keywords: "prometheus"
+          url: "https://prometheus.tom.lan/"
+          target: "_blank"
