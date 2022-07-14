@@ -3,7 +3,7 @@ name: rancher
 description: A chart for rancher
 type: application
 version: 0.1.0
-appVersion: v2.6.5
+appVersion: v2.6.6
 dependencies:
   - name: rancher
-    version: 2.6.5
+    version: 2.6.6

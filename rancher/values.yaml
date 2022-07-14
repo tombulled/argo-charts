@@ -5,6 +5,8 @@ rancher:
 
   privateCA: true
 
+  bootstrapPassword: password
+
   ingress:
     enabled: true
 
