@@ -1,7 +1,7 @@
 rancher:
   replicas: 3
 
-  hostname: rancher.k3s.lan
+  hostname: rancher.tom.lan
 
   privateCA: true
 
