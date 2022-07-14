@@ -3,6 +3,15 @@ rancher:
 
   hostname: rancher.k3s.lan
 
+  privateCA: true
+
   ingress:
+    enabled: true
+
+    extraAnnotations:
+      cert-manager.io/issuer: step-issuer
+      cert-manager.io/issuer-kind: StepClusterIssuer
+      cert-manager.io/issuer-group: certmanager.step.sm
+
     tls:
-      source: rancher
+      source: secret
