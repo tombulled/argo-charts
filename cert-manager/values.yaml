@@ -17,7 +17,7 @@ cert-manager:
       pullPolicy: IfNotPresent
 
   cainjector:
-    enabled: false
+    enabled: true
 
     replicaCount: 1
 
