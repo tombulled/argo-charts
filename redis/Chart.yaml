@@ -1,9 +1,0 @@
-apiVersion: v2
-name: redis
-description: A chart for redis
-type: application
-version: 0.1.0
-appVersion: 6.2.7
-dependencies:
-- name: redis
-  version: 16.9.7
