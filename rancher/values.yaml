@@ -1,0 +1,19 @@
+rancher:
+  replicas: 3
+
+  hostname: rancher.tom.lan
+
+  privateCA: true
+
+  bootstrapPassword: password
+
+  ingress:
+    enabled: true
+
+    extraAnnotations:
+      cert-manager.io/issuer: step-issuer
+      cert-manager.io/issuer-kind: StepClusterIssuer
+      cert-manager.io/issuer-group: certmanager.step.sm
+
+    tls:
+      source: secret

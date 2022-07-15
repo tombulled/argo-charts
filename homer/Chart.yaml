@@ -1,0 +1,6 @@
+apiVersion: v2
+name: homer
+description: Helm chart for Homer
+type: application
+version: 0.1.0
+appVersion: 22.06.1
