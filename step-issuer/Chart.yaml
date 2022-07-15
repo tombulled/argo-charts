@@ -1,0 +1,9 @@
+apiVersion: v2
+name: step-issuer
+description: Helm chart for [Step Issuer](https://github.com/smallstep/step-issuer)
+type: application
+version: 0.1.0
+appVersion: 0.6.0
+dependencies:
+- name: step-issuer
+  version: 0.6.4

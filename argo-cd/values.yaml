@@ -47,11 +47,17 @@ argo-cd:
       enabled: true
       ingressClassName: ingress-nginx
       hosts:
-        - argo-cd.k3s.lan
+        - argo-cd.tom.lan
       paths:
-        - /(.*)
+        - /
       annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /$1
+        cert-manager.io/issuer: step-issuer
+        cert-manager.io/issuer-kind: StepClusterIssuer
+        cert-manager.io/issuer-group: certmanager.step.sm
+      tls:
+        - secretName: argo-cd.tom.lan-tls
+          hosts:
+            - argo-cd.tom.lan
       https: true
 
     extraArgs:

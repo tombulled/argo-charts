@@ -3,14 +3,20 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    cert-manager.io/issuer: step-issuer
+    cert-manager.io/issuer-kind: StepClusterIssuer
+    cert-manager.io/issuer-group: certmanager.step.sm
 spec:
   ingressClassName: ingress-nginx
+  tls:
+  - hosts:
+    - gitmoji.tom.lan
+    secretName: gitmoji.tom.lan-tls
   rules:
-  - host: gitmoji.k3s.lan
+  - host: gitmoji.tom.lan
     http:
       paths:
-      - path: /(.*)
+      - path: /
         pathType: Prefix
         backend:
           service:
