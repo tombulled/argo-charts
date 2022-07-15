@@ -63,7 +63,7 @@ config:
           logo: "assets/images/rancher.svg"
           subtitle: "Complete container management platform"
           keywords: "rancher"
-          url: "https://rancher.lan/dashboard/home"
+          url: "https://rancher.tom.lan/dashboard/home"
           target: "_blank"
     - name: "Applications"
       icon: "fas fa-cloud"
