@@ -14,7 +14,7 @@ ui:
 api:
   image:
     repository: tombulled/to
-    tag: 0.1.1
+    tag: 0.1.2
     pullPolicy: IfNotPresent
 
   service:
