@@ -1,6 +1,12 @@
 glauth:
   replicaCount: 1
 
+  # NOTES:
+  #   The helm chart provides no way to mount volumes
+  #   To use LDAPS, certs need to be mounted inside the container
+  #   Smallstep's `autocert` could potentially be used?
+  #   Can cert manager be used for this?
+
   image:
     repository: "glauth/glauth"
     tag: "v2.0.0"
