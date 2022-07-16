@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Release.Name }}-api
   labels:
-    app: {{ .Release.Name }}
+    app: {{ .Release.Name }}-api
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
 spec:
   type: {{ .Values.api.service.type }}
@@ -13,4 +13,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: {{ .Release.Name }}
+    app: {{ .Release.Name }}-api
