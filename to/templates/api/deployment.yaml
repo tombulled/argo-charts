@@ -16,9 +16,9 @@ spec:
         app: {{ .Release.Name }}-api
     spec:
       volumes:
-      - name: config
-        configMap:
-          name: {{ .Release.Name }}-config
+        - name: config
+          configMap:
+            name: {{ .Release.Name }}-config
       containers:
         - name: {{ .Release.Name }}-api
           image: {{ .Values.api.image.repository }}:{{ .Values.api.image.tag }}
