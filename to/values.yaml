@@ -9,7 +9,7 @@ ui:
   service:
     type: ClusterIP
     port: 80
-    targetPort: 3000
+    targetPort: 8080
 
 api:
   image:
