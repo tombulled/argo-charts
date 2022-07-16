@@ -20,6 +20,13 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: {{ .Release.Name }}
+            name: {{ .Release.Name }}-ui
+            port:
+              name: http
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ .Release.Name }}-api
             port:
               name: http

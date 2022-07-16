@@ -5,6 +5,11 @@ ui:
     repository: tombulled/to-ui
     tag: 0.1.0
     pullPolicy: IfNotPresent
+    
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 8080
 
 api:
   image:
@@ -12,7 +17,7 @@ api:
     tag: 0.1.0
     pullPolicy: IfNotPresent
 
-service:
-  type: ClusterIP
-  port: 80
-  targetPort: 8080
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 8080
