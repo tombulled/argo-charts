@@ -3,7 +3,7 @@ rancher:
 
   hostname: rancher.tom.lan
 
-  privateCA: true
+  privateCA: false
 
   bootstrapPassword: password
 
