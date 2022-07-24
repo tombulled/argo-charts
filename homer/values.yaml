@@ -55,7 +55,7 @@ config:
           target: "_blank"
         - name: "NETGEAR GS724Tv4"
           logo: "assets/images/netgear.png"
-          subtitle: "24-Port Gigabit Ethernet Smart Switch with 2 SFP Ports"
+          subtitle: "24-Port Gigabit Ethernet Smart Switch"
           keywords: "netgear switch"
           url: "http://192.168.0.217/"
           target: "_blank"
