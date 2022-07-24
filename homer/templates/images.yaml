@@ -1,12 +1,13 @@
 {{- $releaseName := .Release.Name -}}
-{{- range $path, $_ :=  .Files.Glob  "assets/images/*" -}}
+{{- range $filePath, $_ :=  .Files.Glob  "assets/images/*" -}}
+{{- $fileName := base $filePath -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{printf "%s-image-%s" $releaseName $path }}
+  name: {{ printf "%s-image-%s" $releaseName (regexReplaceAll "\\." $fileName "-") }}
   labels:
     app: {{ $releaseName }}
 binaryData:
-      {{ base $path }}: {{ $.Files.Get $path | b64enc }}
+      {{ $fileName }}: {{ $.Files.Get $filePath | b64enc }}
 ---
 {{ end }}
