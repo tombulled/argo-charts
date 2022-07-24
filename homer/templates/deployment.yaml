@@ -1,34 +1,46 @@
+{{- $releaseName := .Release.Name -}}
+{{- $chartName := .Chart.Name -}}
+{{- $chartVersion := .Chart.Version -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ $releaseName }}
   labels:
-    app: {{ .Release.Name }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    app: {{ $releaseName }}
+    chart: {{ $chartName }}-{{ $chartVersion }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: {{ $releaseName }}
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: {{ $releaseName }}
     spec:
       volumes:
       - name: config
         configMap:
-          name: {{ .Release.Name }}-config
-      - name: images
+          name: {{ $releaseName }}-config
+      {{ range $filePath, $_ :=  .Files.Glob  "assets/images/*" }}
+      {{- $fileName := base $filePath -}}
+      {{- $fileId := regexReplaceAll "\\." $fileName "-" -}}
+      - name: {{ printf "image-%s" $fileId }}
         configMap:
-          name: {{ .Release.Name }}-images
+          name: {{ printf "%s-image-%s" $releaseName $fileId }}
+      {{ end }}
       containers:
-      - name: {{ .Release.Name }}
+      - name: {{ $releaseName }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         volumeMounts:
         - name: config
           mountPath: /app/assets/config.yml
           subPath: config.yml
-        - name: images
-          mountPath: /app/assets/images
+        {{ range $filePath, $_ :=  .Files.Glob  "assets/images/*" }}
+        {{- $fileName := base $filePath -}}
+        {{- $fileId := regexReplaceAll "\\." $fileName "-" -}}
+        - name: {{ printf "image-%s" $fileId }}
+          mountPath: {{ printf "/app/assets/images/%s" $fileName }}
+          subPath: {{ $fileName }}
+        {{ end }}

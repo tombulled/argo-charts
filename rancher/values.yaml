@@ -1,9 +1,9 @@
 rancher:
-  replicas: 3
+  replicas: 1
 
   hostname: rancher.tom.lan
 
-  privateCA: true
+  privateCA: false
 
   bootstrapPassword: password
 
@@ -16,4 +16,4 @@ rancher:
       cert-manager.io/issuer-group: certmanager.step.sm
 
     tls:
-      source: secret
+      source: rancher
