@@ -1,5 +1,5 @@
 rancher:
-  replicas: 3
+  replicas: 0
 
   hostname: rancher.tom.lan
 
