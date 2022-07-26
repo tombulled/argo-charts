@@ -36,7 +36,7 @@ step-certificates:
             type: Prefix
 
   autocert:
-    enabled: true
+    enabled: false
 
   inject:
     enabled: false
