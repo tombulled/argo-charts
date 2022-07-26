@@ -34,3 +34,9 @@ step-certificates:
         paths:
           - path: /
             type: Prefix
+
+  autocert:
+    enabled: false
+
+  inject:
+    enabled: false
