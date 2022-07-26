@@ -39,4 +39,4 @@ step-certificates:
     enabled: true
 
   inject:
-    enabled: true
+    enabled: false
