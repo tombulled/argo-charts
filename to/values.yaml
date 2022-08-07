@@ -23,6 +23,17 @@ api:
     targetPort: 8080
 
 config:
+  # GitHub Actions
+  - title: "GitHub Actions Documentation"
+    url: "https://docs.github.com/en/actions"
+    description: "Automate, customize, and execute your software development workflows right in your repository with GitHub Actions. You can discover, create, and share actions to perform any job you'd like, including CI/CD, and combine actions in a completely customized workflow."
+    icon: "github.ico"
+    keywords:
+      - github
+      - actions
+      - workflows
+      - docs
+      - documentation
   # Google
   - title: "Google"
     url: "https://www.google.co.uk/"
