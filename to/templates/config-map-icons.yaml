@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ .Release.Name }}-icons-ico
-binaryData:
-  {{- $files := .Files.Glob "assets/icons/*.ico" }}
-  {{- range $key, $value := $files }}
-  {{ $key | base }}: {{ $files.Get $key | quote | b64enc }}
-  {{- end }}
