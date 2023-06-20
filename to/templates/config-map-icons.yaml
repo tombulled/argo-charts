@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-icons
+binaryData:
+  {{- $files := .Files }}
+  {{- range $key, $value := .Files }}
+  {{ $key | base }}: {{ $files.Get $key | quote | b64enc }}
+  {{- end }}
