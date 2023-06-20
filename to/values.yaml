@@ -511,3 +511,11 @@ config:
     keywords:
       - b&q
       - diy
+  # Mullvad VPN
+  - title: "Mullvad VPN - Privacy is a universal right"
+    url: "https://mullvad.net/"
+    description: "Mullvad is a VPN service that helps keep your online activity, identity, and location private."
+    icon: "mullvad.svg"
+    keywords:
+      - "mullvad"
+      - "vpn"
