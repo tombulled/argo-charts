@@ -527,3 +527,12 @@ config:
     keywords:
       - "helm"
       - "kubernetes"
+  # Morrisons Groceries
+  - title: "Morrisons | Online Shopping | Food, Drink & More To Your Door"
+    url: "https://groceries.morrisons.com/"
+    description: "Online supermarket shopping is easy at Morrisons. Home delivery with convenient 1 hour slots and new low prices. Check your postcode today."
+    icon: ""
+    keywords:
+      - "morrisons"
+      - "groceries"
+      - "shop"
