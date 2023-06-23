@@ -25,5 +25,5 @@ spec:
           imagePullPolicy: {{ .Values.api.image.pullPolicy }}
           volumeMounts:
             - name: config
-              mountPath: /app/assets/config.yaml
+              mountPath: /app/config.yaml
               subPath: config.yaml

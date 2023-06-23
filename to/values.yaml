@@ -3,7 +3,7 @@ replicaCount: 1
 ui:
   image:
     repository: tombulled/to-ui
-    tag: 0.1.1
+    tag: 0.1.3
     pullPolicy: IfNotPresent
     
   service:
@@ -14,7 +14,7 @@ ui:
 api:
   image:
     repository: tombulled/to
-    tag: 0.1.2
+    tag: 0.1.3
     pullPolicy: IfNotPresent
 
   service:
@@ -511,3 +511,28 @@ config:
     keywords:
       - b&q
       - diy
+  # Mullvad VPN
+  - title: "Mullvad VPN - Privacy is a universal right"
+    url: "https://mullvad.net/"
+    description: "Mullvad is a VPN service that helps keep your online activity, identity, and location private."
+    icon: "mullvad.svg"
+    keywords:
+      - "mullvad"
+      - "vpn"
+  # Helm
+  - title: "Helm"
+    url: "https://helm.sh/"
+    description: "Helm The package manager for Kubernetes Helm is the best way to find, share, and use software built for Kubernetes. What is Helm? Helm helps you manage Kubernetes applications — Helm Charts help you define, install, and upgrade even the most complex Kubernetes application."
+    icon: "helm.svg"
+    keywords:
+      - "helm"
+      - "kubernetes"
+  # Morrisons Groceries
+  - title: "Morrisons | Online Shopping | Food, Drink & More To Your Door"
+    url: "https://groceries.morrisons.com/"
+    description: "Online supermarket shopping is easy at Morrisons. Home delivery with convenient 1 hour slots and new low prices. Check your postcode today."
+    icon: ""
+    keywords:
+      - "morrisons"
+      - "groceries"
+      - "shop"
