@@ -1,6 +1,7 @@
 harbor:
   # Harbor Common Parameters
   adminPassword: admin
+  externalURL: "https://core.harbor.tom.lan/"
   logLevel: info
 
   # Traffic Exposure Parameters
@@ -15,4 +16,6 @@ harbor:
         cert-manager.io/issuer-kind: StepClusterIssuer
         cert-manager.io/issuer-group: certmanager.step.sm
       tls: true
-
+      # WARN: Currently using self-signed cert as a valid
+      # cert is required.
+      selfSigned: true
