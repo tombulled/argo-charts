@@ -1,0 +1,18 @@
+harbor:
+  # Harbor Common Parameters
+  adminPassword: admin
+  logLevel: info
+
+  # Traffic Exposure Parameters
+  exposureType: ingress
+  ingress:
+    core:
+      ingressClassName: ingress-nginx
+      pathType: Prefix
+      hostname: core.harbor.tom.lan
+      annotations:
+        cert-manager.io/issuer: step-issuer
+        cert-manager.io/issuer-kind: StepClusterIssuer
+        cert-manager.io/issuer-group: certmanager.step.sm
+      tls: true
+

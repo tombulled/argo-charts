@@ -1,0 +1,5 @@
+# Bitnami - Global Parameters
+global:
+  imageRegistry: registry-1.docker.io
+  imagePullSecrets: []
+  storageClass: ""
