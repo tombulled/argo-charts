@@ -1,7 +1,7 @@
 harbor:
   # Harbor Common Parameters
   adminPassword: admin
-  externalURL: "https://core.harbor.tom.lan:8443"
+  externalURL: "https://harbor.tom.lan:8443"
   logLevel: info
 
   # Traffic Exposure Parameters
@@ -10,7 +10,7 @@ harbor:
     core:
       ingressClassName: ingress-nginx
       pathType: Prefix
-      hostname: core.harbor.tom.lan
+      hostname: harbor.tom.lan
       annotations:
         cert-manager.io/issuer: step-issuer
         cert-manager.io/issuer-kind: StepClusterIssuer
