@@ -1,0 +1,21 @@
+harbor:
+  # Harbor Common Parameters
+  adminPassword: admin
+  externalURL: "https://harbor.tom.lan:8443"
+  logLevel: info
+
+  # Traffic Exposure Parameters
+  exposureType: ingress
+  ingress:
+    core:
+      ingressClassName: ingress-nginx
+      pathType: Prefix
+      hostname: harbor.tom.lan
+      annotations:
+        cert-manager.io/issuer: step-issuer
+        cert-manager.io/issuer-kind: StepClusterIssuer
+        cert-manager.io/issuer-group: certmanager.step.sm
+      tls: true
+      # WARN: Currently using self-signed cert as a valid
+      # cert is required.
+      selfSigned: true
