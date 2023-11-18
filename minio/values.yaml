@@ -31,23 +31,25 @@ minio:
   ingress:
     enabled: true
     ingressClassName: ingress-nginx
+    hostname: minio-console.tom.lan
+    path: /
+    pathType: Prefix
+    annotations:
+      cert-manager.io/issuer: step-issuer
+      cert-manager.io/issuer-kind: StepClusterIssuer
+      cert-manager.io/issuer-group: certmanager.step.sm
+    tls: true
+  apiIngress:
+    enabled: true
+    ingressClassName: ingress-nginx
     hostname: minio.tom.lan
     path: /
     pathType: Prefix
-    annotations: {}
+    annotations:
+      cert-manager.io/issuer: step-issuer
+      cert-manager.io/issuer-kind: StepClusterIssuer
+      cert-manager.io/issuer-group: certmanager.step.sm
     tls: true
-    # selfSigned: true
-    # secrets: []
-  # apiIngress:
-  #   enabled: true
-  #   ingressClassName: ingress-nginx
-  #   hostname: minio-api.tom.lan
-  #   path: /
-  #   pathType: Prefix
-  #   annotations: {}
-  #   tls: true
-  #   # selfSigned: true
-  #   # secrets: []
   networkPolicy:
     enabled: false
 
