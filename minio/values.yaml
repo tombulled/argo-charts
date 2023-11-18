@@ -10,7 +10,7 @@ minio:
 
   auth:
     rootUser: admin
-    rootPassword: admin
+    rootPassword: password
 
   defaultBuckets: bucket-a,bucket-b
 

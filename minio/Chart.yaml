@@ -1,6 +1,6 @@
 apiVersion: v2
 name: minio
-description: Helm Chart for MinIO packaged 
+description: Helm Chart for MinIO packaged by Bitnami
 type: application
 version: 0.1.0
 appVersion: 12.10.1
