@@ -33,7 +33,7 @@ minio:
     ingressClassName: ingress-nginx
     hostname: minio.tom.lan
     path: /
-    pathType: PathPrefix
+    pathType: Prefix
     annotations: {}
     tls: true
     # selfSigned: true
@@ -43,7 +43,7 @@ minio:
   #   ingressClassName: ingress-nginx
   #   hostname: minio-api.tom.lan
   #   path: /
-  #   pathType: PathPrefix
+  #   pathType: Prefix
   #   annotations: {}
   #   tls: true
   #   # selfSigned: true
