@@ -1,0 +1,10 @@
+apiVersion: v2
+name: minio
+description: Helm Chart for MinIO packaged 
+type: application
+version: 0.1.0
+appVersion: 12.10.1
+dependencies:
+- name: minio
+  version: 12.10.1
+  repository: oci://registry-1.docker.io/bitnamicharts

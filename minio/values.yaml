@@ -1,0 +1,60 @@
+minio:
+  # MinIO Parameters
+  image:
+    repository: bitnami/minio
+
+  clientImage:
+    repository: bitnami/minio-client
+
+  mode: standalone
+
+  auth:
+    rootUser: admin
+    rootPassword: admin
+
+  defaultBuckets: bucket-a,bucket-b
+
+  # MinIO Deployment/StatefulSet Parameters
+  containerPorts:
+    api: 9000
+    console: 9001
+
+  podLabels: {}
+  podAnnotations: {}
+
+  # Traffic Exposure Parameters
+  service:
+    type: ClusterIP
+    ports:
+      api: 9000
+      console: 9001
+  ingress:
+    enabled: true
+    ingressClassName: ingress-nginx
+    hostname: minio.tom.lan
+    path: /
+    pathType: PathPrefix
+    annotations: {}
+    tls: true
+    # selfSigned: true
+    # secrets: []
+  # apiIngress:
+  #   enabled: true
+  #   ingressClassName: ingress-nginx
+  #   hostname: minio-api.tom.lan
+  #   path: /
+  #   pathType: PathPrefix
+  #   annotations: {}
+  #   tls: true
+  #   # selfSigned: true
+  #   # secrets: []
+  networkPolicy:
+    enabled: false
+
+  # Persistence Parameters
+  persistence:
+    enabled: false
+
+  # Volume Permission Parameters
+  volumePermissions:
+    enabled: false
