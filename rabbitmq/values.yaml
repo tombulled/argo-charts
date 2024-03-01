@@ -1,0 +1,57 @@
+rabbitmq:
+  # Common Parameters
+  auth:
+    username: user
+    password: password
+
+    tls:
+      enabled: false
+
+  communityPlugins: []
+  extraPlugins: []
+
+  clustering:
+    enabled: false
+
+  loadDefinition:
+    enabled: false
+
+  extraEnvVars: []
+  extraConfiguration: ""
+  featureFlags: ""
+
+  ldap:
+    enabled: false
+
+  extraVolumeMounts: []
+  extraVolumes: []
+
+  # Statefulset Parameters
+  replicaCount: 1
+  podLabels: {}
+  podAnnotations: {}
+  resources: {}
+
+  # Persistence Parameters
+  persistence:
+    enabled: false
+
+  # Exposure Parameters
+  ingress:
+    enabled: true
+    path: /
+    pathType: Prefix
+    hostname: rabbitmq.tom.lan
+    annotations: {}
+    tls: true
+    ingressClassName: ingress-nginx
+  networkPolicy:
+    enabled: false
+
+  # Metrics Parameters
+  metrics:
+    enabled: false
+
+  # Init Container Parameters
+  volumePermissions:
+    enabled: false
