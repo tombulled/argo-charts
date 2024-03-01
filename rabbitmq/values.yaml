@@ -1,58 +1,59 @@
-rabbitmq:
-  # Common Parameters
-  auth:
-    username: user
-    password: password
+# rabbitmq:
+#   # Common Parameters
+#   auth:
+#     username: user
+#     password: password
 
-    tls:
-      enabled: false
+#     tls:
+#       enabled: false
 
-  communityPlugins: []
-  extraPlugins: []
+#   communityPlugins: []
+#   extraPlugins: []
 
-  clustering:
-    enabled: false
+#   clustering:
+#     enabled: false
 
-  loadDefinition:
-    enabled: false
+#   loadDefinition:
+#     enabled: false
 
-  extraEnvVars: []
-  extraConfiguration: ""
-  featureFlags: ""
+#   extraEnvVars: []
+#   extraConfiguration: ""
+#   featureFlags: ""
 
-  ldap:
-    enabled: false
+#   ldap:
+#     enabled: false
 
-  extraVolumeMounts: []
-  extraVolumes: []
+#   extraVolumeMounts: []
+#   extraVolumes: []
 
-  # Statefulset Parameters
-  replicaCount: 1
-  podLabels: {}
-  podAnnotations: {}
-  resourcesPreset: small # TODO: Iron out resources
+#   # Statefulset Parameters
+#   replicaCount: 1
+#   podLabels: {}
+#   podAnnotations: {}
+#   # resourcesPreset: small # TODO: Iron out resources
+#   resources: {}
 
-  # Persistence Parameters
-  persistence:
-    enabled: false
+#   # Persistence Parameters
+#   persistence:
+#     enabled: false
 
-  # Exposure Parameters
-  ingress:
-    enabled: true
-    path: /
-    pathType: Prefix
-    hostname: rabbitmq.tom.lan
-    annotations: {}
-    # Note: TLS currently disabled as step-issuer not deployed
-    tls: false
-    ingressClassName: ingress-nginx
-  networkPolicy:
-    enabled: false
+#   # Exposure Parameters
+#   ingress:
+#     enabled: true
+#     path: /
+#     pathType: Prefix
+#     hostname: rabbitmq.tom.lan
+#     annotations: {}
+#     # Note: TLS currently disabled as step-issuer not deployed
+#     tls: false
+#     ingressClassName: ingress-nginx
+#   networkPolicy:
+#     enabled: false
 
-  # Metrics Parameters
-  metrics:
-    enabled: false
+#   # Metrics Parameters
+#   metrics:
+#     enabled: false
 
-  # Init Container Parameters
-  volumePermissions:
-    enabled: false
+#   # Init Container Parameters
+#   volumePermissions:
+#     enabled: false
