@@ -30,7 +30,7 @@ rabbitmq:
   replicaCount: 1
   podLabels: {}
   podAnnotations: {}
-  resources: {}
+  resourcesPreset: small # TODO: Iron out resources
 
   # Persistence Parameters
   persistence:
