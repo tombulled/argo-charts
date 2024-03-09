@@ -4,7 +4,7 @@ metadata:
   name: root-ca
 spec:
   isCA: true
-  commonName: root-ca
+  commonName: TomOrg Root CA
   secretName: root-ca
   privateKey:
     algorithm: ECDSA
@@ -15,4 +15,4 @@ spec:
     group: cert-manager.io
   subject:
     organizationalUnits:
-      - "Root CA"
+      - "TomOrg Certificate Authority"
