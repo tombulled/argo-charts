@@ -4,4 +4,4 @@ metadata:
   name: ca
 spec:
   ca:
-    secretName: cert-manager/root-ca
+    secretName: root-ca
