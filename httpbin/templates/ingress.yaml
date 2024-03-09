@@ -3,9 +3,10 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
-    cert-manager.io/issuer: step-issuer
-    cert-manager.io/issuer-kind: StepClusterIssuer
-    cert-manager.io/issuer-group: certmanager.step.sm
+    cert-manager.io/issuer: self-signed
+    # cert-manager.io/issuer: step-issuer
+    # cert-manager.io/issuer-kind: StepClusterIssuer
+    # cert-manager.io/issuer-group: certmanager.step.sm
 spec:
   ingressClassName: ingress-nginx
   tls:
