@@ -13,3 +13,6 @@ spec:
     name: self-signed
     kind: ClusterIssuer
     group: cert-manager.io
+  subject:
+    organizationalUnits:
+      - "Root CA"
