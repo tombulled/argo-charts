@@ -4,9 +4,10 @@ metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
     # CA
-    cert-manager.io/issuer: ca
-    cert-manager.io/issuer-kind: ClusterIssuer
-    cert-manager.io/issuer-group: cert-manager.io
+    cert-manager.io/cluster-issuer: ca
+    # cert-manager.io/issuer: ca
+    # cert-manager.io/issuer-kind: ClusterIssuer
+    # cert-manager.io/issuer-group: cert-manager.io
 
     # Self-Signed
     # cert-manager.io/issuer: self-signed
