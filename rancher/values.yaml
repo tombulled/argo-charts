@@ -3,7 +3,7 @@ rancher:
 
   hostname: rancher.tom.lan
 
-  privateCA: false
+  privateCA: true
 
   bootstrapPassword: password
 
@@ -14,4 +14,4 @@ rancher:
       cert-manager.io/cluster-issuer: ca
 
     tls:
-      source: rancher
+      source: secret

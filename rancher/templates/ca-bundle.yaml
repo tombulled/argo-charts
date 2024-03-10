@@ -1,0 +1,15 @@
+apiVersion: trust.cert-manager.io/v1alpha1
+kind: Bundle
+metadata:
+  name: tls-ca
+spec:
+  sources:
+  - secret:
+      name: "root-ca"
+      key: "ca.crt"
+  target:
+    secret:
+      key: "cacerts.pem"
+    namespaceSelector:
+      matchLabels:
+        kubernetes.io/metadata.name: "cattle-system"

@@ -1,0 +1,9 @@
+apiVersion: v3
+name: trust-manager
+description: Helm chart for [trust-manager](https://github.com/cert-manager/trust-manager)
+type: application
+version: 0.1.0
+dependencies:
+- name: trust-manager
+  version: 0.9.0
+  repository: https://charts.jetstack.io/

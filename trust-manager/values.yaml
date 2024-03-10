@@ -1,0 +1,56 @@
+trust-manager:
+  crds:
+    # This option decides if the CRDs should be installed as part of the
+    # Helm installation.
+    enabled: true
+    # This option makes it so that the "helm.sh/resource-policy": keep
+    # annotation is added to the CRD. This will prevent Helm from
+    # uninstalling the CRD when the Helm release is uninstalled.
+    # WARNING: when the CRDs are removed, all cert-manager custom resources
+    # (Certificates, Issuers, ...) will be removed too by the garbage collector.
+    keep: true
+
+  replicaCount: 1
+
+  image:
+    registry: quay.io
+    repository: jetstack/trust-manager
+
+  defaultPackage:
+    # Whether to load the default trust package during pod initialization,
+    # and include it in main container args.
+    # This container enables the 'useDefaultCAs' source on Bundles.
+    enabled: true
+
+  defaultPackageImage:
+    registry: quay.io
+    repository: jetstack/cert-manager-package-debian
+
+  secretTargets:
+    # If set to true, enable writing trust bundles to Kubernetes Secrets
+    # as a target. trust-manager can only write to secrets which are
+    # explicitly allowed via either authorizedSecrets or authorizedSecretsAll.
+    # Note that enabling secret targets will grant trust-manager read access to
+    # all secrets in the cluster.
+    enabled: true
+    # If set to true, grant read/write permission to all secrets across the
+    # cluster. Use with caution!
+    # If set, ignores the authorizedSecrets list.
+    authorizedSecretsAll: false
+    # A list of secret names which trust-manager will be permitted to read and
+    # write across all namespaces. These are the only allowable Secrets that can
+    # be used as targets.
+    # If the list is empty (and authorizedSecretsAll is false), trust-manager
+    # can't write to secrets and can only read secrets in the trust namespace
+    # for use as sources.
+    authorizedSecrets:
+      - "tls-ca" # Used by Rancher in cattle-system namespace
+
+  filterExpiredCertificates:
+    # Whether to filter expired certificates from the trust bundle.
+    enabled: false
+
+  app:
+    # The verbosity of trust-manager logging.
+    # This takes a value from 1-5, with the higher value being more verbose.
+    logLevel: 1
