@@ -32,7 +32,7 @@ trust-manager:
     # explicitly allowed via either authorizedSecrets or authorizedSecretsAll.
     # Note that enabling secret targets will grant trust-manager read access to
     # all secrets in the cluster.
-    enabled: false
+    enabled: true
     # If set to true, grant read/write permission to all secrets across the
     # cluster. Use with caution!
     # If set, ignores the authorizedSecrets list.
@@ -43,7 +43,8 @@ trust-manager:
     # If the list is empty (and authorizedSecretsAll is false), trust-manager
     # can't write to secrets and can only read secrets in the trust namespace
     # for use as sources.
-    authorizedSecrets: []
+    authorizedSecrets:
+      - "tls-ca" # Used by Rancher in cattle-system namespace
 
   filterExpiredCertificates:
     # Whether to filter expired certificates from the trust bundle.
