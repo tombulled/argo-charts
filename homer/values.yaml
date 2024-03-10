@@ -12,7 +12,7 @@ service:
 
 ingress:
   host: homer.tom.lan
-  auth: true
+  auth: false
   tls: true
 
 config:
