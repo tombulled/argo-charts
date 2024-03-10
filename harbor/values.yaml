@@ -12,9 +12,7 @@ harbor:
       pathType: Prefix
       hostname: harbor.tom.lan
       annotations:
-        cert-manager.io/issuer: step-issuer
-        cert-manager.io/issuer-kind: StepClusterIssuer
-        cert-manager.io/issuer-group: certmanager.step.sm
+        cert-manager.io/cluster-issuer: ca
       tls: true
       # WARN: Currently using self-signed cert as a valid
       # cert is required.

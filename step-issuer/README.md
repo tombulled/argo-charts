@@ -12,3 +12,11 @@ Next, get provisioner information (contains provisioner `kid`):
 ```sh
 kubectl get -o jsonpath="{.data['ca\.json']}" configmaps/step-certificates-config | jq .authority.provisioners
 ```
+
+## Usage
+The following annotations can be added to ingresses to use the `step-issuer`:
+```yaml
+cert-manager.io/issuer: step-issuer
+cert-manager.io/issuer-kind: StepClusterIssuer
+cert-manager.io/issuer-group: certmanager.step.sm
+```
