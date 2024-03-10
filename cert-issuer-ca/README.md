@@ -10,3 +10,9 @@ CA Issuer
 
 ## Creating CA Pair
 Good one-stop guide: https://openssl-ca.readthedocs.io/en/latest/introduction.html
+
+## Using CA
+To view the CA, run:
+```sh
+kubectl get secret root-ca -n cert-manager -o jsonpath='{.data.ca\.crt}' | base64 -d
+```
