@@ -51,9 +51,7 @@ argo-cd:
       paths:
         - /
       annotations:
-        cert-manager.io/issuer: step-issuer
-        cert-manager.io/issuer-kind: StepClusterIssuer
-        cert-manager.io/issuer-group: certmanager.step.sm
+        cert-manager.io/cluster-issuer: ca
       tls:
         - secretName: argo-cd.tom.lan-tls
           hosts:

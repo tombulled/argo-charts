@@ -50,7 +50,7 @@ rabbitmq:
     pathType: Prefix
     hostname: rabbitmq.tom.lan
     annotations: {}
-    # Note: TLS currently disabled as step-issuer not deployed
+    # Note: TLS currently disabled as issuer not deployed/configured
     tls: false
     ingressClassName: ingress-nginx
   networkPolicy:

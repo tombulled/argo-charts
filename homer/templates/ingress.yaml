@@ -4,9 +4,7 @@ metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
     {{- if (default .Values.ingress.tls true) }}
-    cert-manager.io/issuer: step-issuer
-    cert-manager.io/issuer-kind: StepClusterIssuer
-    cert-manager.io/issuer-group: certmanager.step.sm
+    cert-manager.io/cluster-issuer: ca
     {{- end }}
     {{- if (default .Values.ingress.auth true) }}
     nginx.ingress.kubernetes.io/auth-url: http://ak-outpost-authentik-embedded-outpost.default.svc.cluster.local:9000/outpost.goauthentik.io/auth/nginx
