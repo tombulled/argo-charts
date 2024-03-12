@@ -4,6 +4,8 @@ rabbitmq:
     username: user
     password: password
 
+    erlangCookie: erlang-cookie
+
     tls:
       enabled: false
 
