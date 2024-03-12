@@ -1,33 +1,12 @@
 minio:
   # MinIO Parameters
-  image:
-    repository: bitnami/minio
-
-  clientImage:
-    repository: bitnami/minio-client
-
-  mode: standalone
-
   auth:
     rootUser: admin
     rootPassword: password
 
   defaultBuckets: bucket-a,bucket-b
 
-  # MinIO Deployment/StatefulSet Parameters
-  containerPorts:
-    api: 9000
-    console: 9001
-
-  podLabels: {}
-  podAnnotations: {}
-
   # Traffic Exposure Parameters
-  service:
-    type: ClusterIP
-    ports:
-      api: 9000
-      console: 9001
   ingress:
     enabled: true
     ingressClassName: ingress-nginx
