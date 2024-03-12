@@ -51,9 +51,9 @@ rabbitmq:
     path: /
     pathType: Prefix
     hostname: rabbitmq.tom.lan
-    annotations: {}
-    # Note: TLS currently disabled as issuer not deployed/configured
-    tls: false
+    annotations:
+      cert-manager.io/cluster-issuer: ca
+    tls: true
     ingressClassName: ingress-nginx
   networkPolicy:
     enabled: false
