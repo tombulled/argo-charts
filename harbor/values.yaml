@@ -1,7 +1,7 @@
 harbor:
   # Harbor Common Parameters
   adminPassword: admin
-  externalURL: "https://harbor.tom.lan:8443"
+  externalURL: "https://harbor.tom.lan"
   logLevel: info
 
   # Traffic Exposure Parameters
@@ -14,6 +14,3 @@ harbor:
       annotations:
         cert-manager.io/cluster-issuer: ca
       tls: true
-      # WARN: Currently using self-signed cert as a valid
-      # cert is required.
-      selfSigned: true

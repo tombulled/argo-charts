@@ -3,8 +3,7 @@ name: harbor
 description: Harbor
 type: application
 version: 0.1.0
-appVersion: 19.1.2
 dependencies:
 - name: harbor
-  version: 19.1.2
-  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 20.1.2
+  repository: https://charts.bitnami.com/bitnami
