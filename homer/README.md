@@ -2,6 +2,12 @@
 Helm chart for [Homer](https://github.com/bastienwirtz/homer)
 
 ## Icons
+Homarr is a good reference for where it sources [its icons](https://homarr.dev/docs/advanced/customizations/icons).
+More specifically:
+* [walkxcode/dashboard-icons](https://github.com/walkxcode/dashboard-icons)
+* [loganmarchione/homelab-svg-assets](https://github.com/loganmarchione/homelab-svg-assets)
+
+Icons manually sourced:
 * Prometheus:
     1. https://github.com/prometheus/docs/blob/main/static/prometheus_logo_orange_circle.svg
     2. https://github.com/cncf/artwork/blob/master/projects/prometheus/icon/color/prometheus-icon-color.svg
