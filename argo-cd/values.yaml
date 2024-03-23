@@ -1,39 +1,36 @@
 argo-cd:
-  replicas: 1
+  # Global Configs
+  global:
+    addPrometheusAnnotations: true
+    domain: argo-cd.tom.lan
+    logging:
+      level: info
+    networkPolicy:
+      create: false
 
-  image:
-    repository: quay.io/argoproj/argocd
-    tag: v2.3.3
-    imagePullPolicy: IfNotPresent
+  # Argo CD Configs
+  configs:
+    cm:
+      exec.enabled: true
 
+    secret:
+      argocdServerAdminPassword: $2a$10$RfZBdyaoNqCqOidEUCCY6OwNIZfOaytsGzdr9Ie6NPMRhDuwSWH8y
+
+  # Argo CD Controller
   controller:
+    replicas: 1
+
     metrics:
       enabled: true
 
-    clusterRoleRules:
-      rules:
-        - apiGroups:
-          - '*'
-          resources:
-          - '*'
-          verbs:
-          - '*'
-        - nonResourceURLs:
-          - '*'
-          verbs:
-          - '*'
+  # Argo Repo Server
+  repoServer:
+    replicas: 1
 
-  dex:
-    enabled: false
+    metrics:
+      enabled: true
 
-  redis:
-    enabled: true
-
-    image:
-      repository: redis
-      tag: 6.2.6-alpine
-      imagePullPolicy: IfNotPresent
-
+  # Argo Server
   server:
     replicas: 1
 
@@ -46,41 +43,39 @@ argo-cd:
     ingress:
       enabled: true
       ingressClassName: ingress-nginx
-      hosts:
-        - argo-cd.tom.lan
-      paths:
-        - /
+      path: /
+      pathType: Prefix
       annotations:
         cert-manager.io/cluster-issuer: ca
-      tls:
+      tls: true
+      extraTls:
         - secretName: argo-cd.tom.lan-tls
           hosts:
             - argo-cd.tom.lan
-      https: true
 
     extraArgs:
       - --insecure
 
-  repoServer:
-    replicas: 1
+    extensions:
+      enabled: true
+
+    extensionList: []
+
+  # Dex
+  dex:
+    enabled: false
+
+  # Redis
+  redis:
+    enabled: true
+
+  # ApplicationSet
+  applicationSet:
+    replicaCount: 1
 
     metrics:
       enabled: true
 
-  configs:
-    secret:
-      argocdServerAdminPassword: $2a$10$RfZBdyaoNqCqOidEUCCY6OwNIZfOaytsGzdr9Ie6NPMRhDuwSWH8y
-
-  applicationSet:
-    replicaCount: 1
-
-    image:
-      repository: quay.io/argoproj/argocd-applicationset
-      tag: v0.4.1
-      imagePullPolicy: IfNotPresent
-
-    metrics:
-      enabled: false
-
+  # Notifications
   notifications:
     enabled: false
