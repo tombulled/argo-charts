@@ -3,4 +3,3 @@ mongodb:
   auth:
     rootUser: root
     rootPassword: password
-    databases: [db]
