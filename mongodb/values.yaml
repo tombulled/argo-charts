@@ -1,0 +1,5 @@
+mongodb:
+  # MongoDB Parameters
+  auth:
+    rootUser: root
+    rootPassword: password
