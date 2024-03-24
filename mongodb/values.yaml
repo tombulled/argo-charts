@@ -2,3 +2,7 @@ mongodb:
   # MongoDB Parameters
   auth:
     enabled: false
+
+  # Network Policies
+  networkPolicy:
+    enabled: false
