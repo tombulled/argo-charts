@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: tombulled/music-api
+  tag: 0.1.0
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
