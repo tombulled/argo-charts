@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: ca
+    # nginx.ingress.kubernetes.io/auth-url: http://ak-outpost-authentik-embedded-outpost.default.svc.cluster.local:9000/outpost.goauthentik.io/auth/nginx
+    # nginx.ingress.kubernetes.io/auth-signin: https://music-ui.tom.lan/outpost.goauthentik.io/start?rd=$escaped_request_uri
+    # nginx.ingress.kubernetes.io/auth-response-headers: Set-Cookie,X-authentik-username,X-authentik-groups,X-authentik-email,X-authentik-name,X-authentik-uid
+    # nginx.ingress.kubernetes.io/auth-snippet: proxy_set_header X-Forwarded-Host $http_host;
+spec:
+  ingressClassName: ingress-nginx
+  tls:
+  - hosts:
+    - music-ui.tom.lan
+    secretName: music-ui.tom.lan-tls
+  rules:
+  - host: music-ui.tom.lan
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ .Release.Name }}
+            port:
+              name: http
