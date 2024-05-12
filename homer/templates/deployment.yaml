@@ -35,12 +35,12 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         volumeMounts:
         - name: config
-          mountPath: /app/assets/config.yml
+          mountPath: /www/assets/config.yml
           subPath: config.yml
         {{ range $filePath, $_ :=  .Files.Glob  "assets/images/*" }}
         {{- $fileName := base $filePath -}}
         {{- $fileId := regexReplaceAll "\\." $fileName "-" -}}
         - name: {{ printf "image-%s" $fileId }}
-          mountPath: {{ printf "/app/assets/images/%s" $fileName }}
+          mountPath: {{ printf "/www/assets/images/%s" $fileName }}
           subPath: {{ $fileName }}
         {{ end }}
