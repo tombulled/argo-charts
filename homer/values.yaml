@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: tombulled/homer
-  tag: 22.06.1
+  repository: b4bz/homer
+  tag: v24.04.1
   pullPolicy: IfNotPresent
 
 service:
