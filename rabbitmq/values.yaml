@@ -65,3 +65,22 @@ rabbitmq:
   # Init Container Parameters
   volumePermissions:
     enabled: false
+
+  extraDeploy:
+    - apiVersion: v1
+      kind: Service
+      metadata:
+        name: rabbitmq-amqp
+        labels:
+          app.kubernetes.io/instance: rabbitmq
+          app.kubernetes.io/name: rabbitmq
+      spec:
+        type: NodePort
+        ports:
+          - name: amqp
+            port: 5672
+            targetPort: 5672
+            nodePort: 32672
+        selector:
+          app.kubernetes.io/instance: rabbitmq
+          app.kubernetes.io/name: rabbitmq
