@@ -16,7 +16,7 @@ minio:
     annotations:
       cert-manager.io/cluster-issuer: ca
       # Fix for "413 Request Entity Too Large"
-      nginx.ingress.kubernetes.io/proxy-body-size: 0
+      nginx.ingress.kubernetes.io/proxy-body-size: "0"
     tls: true
   apiIngress:
     enabled: true
@@ -27,7 +27,7 @@ minio:
     annotations:
       cert-manager.io/cluster-issuer: ca
       # Fix for "413 Request Entity Too Large"
-      nginx.ingress.kubernetes.io/proxy-body-size: 0
+      nginx.ingress.kubernetes.io/proxy-body-size: "0"
     tls: true
   networkPolicy:
     enabled: false
