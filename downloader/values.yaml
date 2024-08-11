@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: tombulled/downloader
-  tag: 0.1.1-rc0
+  tag: 0.1.1-rc1
   pullPolicy: IfNotPresent
 
 env:
