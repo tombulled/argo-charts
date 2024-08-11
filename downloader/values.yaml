@@ -2,14 +2,15 @@ replicaCount: 1
 
 image:
   repository: tombulled/downloader
-  tag: 0.1.0
+  tag: 0.1.1
   pullPolicy: IfNotPresent
 
 env:
   # S3
-  S3_ENDPOINT: minio
+  S3_ENDPOINT: minio:9000
   S3_ACCESS-KEY: admin
   S3_SECRET-KEY: password
+  S3_SECURE: false
 
   # RabbitMQ
   RABBIT_URL: amqp://user:password@rabbitmq:5672/
